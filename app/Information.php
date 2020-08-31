@@ -10,5 +10,8 @@ class Information extends Model
 
         'name' 
 
+
+        
+
      ];
 }
