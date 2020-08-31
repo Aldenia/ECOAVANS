@@ -13,6 +13,7 @@
 - copy '.env.example' to '.env'
 - config database
 - exec 'php artisan key:generate'
+- exec 'php artisan migrate' 
 
 ## Third
 - exec 'npm install'
