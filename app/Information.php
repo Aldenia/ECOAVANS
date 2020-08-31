@@ -8,6 +8,7 @@ class Information extends Model
 {
     protected $fillable = [
         // jorge´s test
+        //Jorge tiene hambre <3
 
         'name'
 
