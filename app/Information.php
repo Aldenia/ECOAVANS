@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Information extends Model
 {
-    protected $fillable = [ 
+    protected $fillable = [
+        // jorge´s test
 
-        'name' 
+        'name'
 
      ];
 }
