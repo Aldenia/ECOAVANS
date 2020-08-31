@@ -11,8 +11,8 @@ class Information extends Model
 
         'name'
 
-//este es un ejemplo - Carlos
-
+// //este es un ejemplo - Carlos
+// //hola
 
      ];
 }
