@@ -8,7 +8,8 @@ class Information extends Model
 {
     protected $fillable = [
         'name',
-        'lastname'
+        'lastname',
+        'image' 
 
      ];
 }
