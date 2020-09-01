@@ -9,7 +9,10 @@ class Information extends Model
     protected $fillable = [
         'name',
         'lastname',
-        'id'
+        'id',
+
+        
+        'name_U'
 
      ];
 }
