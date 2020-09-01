@@ -69,6 +69,8 @@
           <li><a href="#services">Servicios</a></li>
           <li><a href="#portfolio">Galeria</a></li>
           <li><a href="#team">Equipo</a></li>
+
+
           <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -88,6 +90,19 @@
           </li>
           <li><a href="#contact">Contactos</a></li>
 
+
+          <li>
+          @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                    @endauth
+                </div>
+            @endif
+          </li>
         </ul>
       </nav><!-- .nav-menu -->
 
