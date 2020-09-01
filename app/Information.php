@@ -8,8 +8,6 @@ class Information extends Model
 {
     protected $fillable = [
         'name',
-        //prueba
-        //segundo cambio
 
         'lastname'
 
