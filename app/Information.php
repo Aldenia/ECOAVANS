@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Information extends Model
 {
     protected $fillable = [
-        'name',
-        //prueba
-
-        'lastname'
-
+        
+        'name_U'
+//hhhhhhh
      ];
 }
