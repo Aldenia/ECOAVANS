@@ -9,6 +9,6 @@ class Information extends Model
     protected $fillable = [
         
         'name_U'
-
+//hhhhhhh
      ];
 }
