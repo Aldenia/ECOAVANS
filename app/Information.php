@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Information extends Model
 {
     protected $fillable = [
-    'id', 'tittle', 'body',
-    ];
+        'name',
+        'lastname',
+        'id',
+
+        
+        'name_U'
+
+     ];
 }
