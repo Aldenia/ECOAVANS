@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class VoluntaryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource..
      *
      * @return \Illuminate\Http\Response
      */

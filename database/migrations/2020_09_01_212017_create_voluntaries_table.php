@@ -27,7 +27,7 @@ class CreateVoluntariesTable extends Migration
     }
 
     /**
-     * Reverse the migrations RR.
+     * Reverse the migrations RRR.
      *
      * @return void
      */

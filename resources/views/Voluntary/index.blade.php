@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout') 
 @section('content')
  <div class="col-sm-8">
  <h2>
@@ -6,7 +6,7 @@
  <a href="{{ route('Voluntary.create') }}" class="btn btn-primary
 pull-right">nuevo</a>
  </h2>
- <div class="row">
+ <div class="row"> 
 
  </div>
 
@@ -37,7 +37,7 @@ pull-right">nuevo</a>
  <td>{{$Voluntary->email}}</td>
  <td>{{$Voluntary->descripcion}}</td>
 
- </tr>
+ </tr> 
  @endforeach
  </tbody>
  </table>
