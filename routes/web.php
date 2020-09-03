@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/carro', 'layout');
+Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
+//Route::post('/', );
+//Route::get('/', funtion(){
+  //  return view('layout');
+//});
