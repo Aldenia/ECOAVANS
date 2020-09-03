@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Voluntary;
 use Illuminate\Http\Request;
+use App\Http\Requests\VoluntaryRequest;
 
 class VoluntaryController extends Controller
 {
     /**
-     * Display a listing of the resource..
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-       $Voluntary = Voluntary::orderBy('id', 'DESC')->paginate();
-       return view('Voluntary.index', compact('Voluntary'));
+        $Voluntary = Voluntary::orderBy('id', 'DESC')->paginate();
+        return view('Voluntary.index', compact('Voluntary'));
     }
 
     /**
@@ -25,7 +26,7 @@ class VoluntaryController extends Controller
      */
     public function create()
     {
-        //
+        return view('Voluntary.create')
     }
 
     /**
@@ -34,9 +35,20 @@ class VoluntaryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VoluntaryRequest $request)
     {
-        //
+        $VoluntaryN= new Voluntary;
+        $VoluntaryN->id= $request->id;
+        $VoluntaryN->nombre= $request->nombre;
+        $VoluntaryN->apellido1= $request->apellido1;
+        $VoluntaryN->apellido2= $request->apellido2;
+        $VoluntaryN->telefono= $request->id;
+        $VoluntaryN->direccion= $request->direccion;
+        $VoluntaryN->email= $request->email;
+        $VoluntaryN->descripcion= $request->descripcion;
+
+        $VoluntaryN->save;
+        return redirect()->route('Voluntary.index');
     }
 
     /**

@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('Voluntary', 'VoluntaryController');
-//,
+Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
+
