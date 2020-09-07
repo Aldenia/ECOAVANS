@@ -12,15 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('indexInformation');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//Route::get('/carro', 'layout');
+
 Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
-//Route::post('/', );
-//Route::get('/', funtion(){
-  //  return view('layout');
-//});
+
+
+
