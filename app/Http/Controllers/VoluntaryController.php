@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Voluntary;
 use Illuminate\Http\Request;
+use App\Http\Requests\VoluntaryRequest;
 
 class VoluntaryController extends Controller
 {
@@ -25,7 +26,7 @@ class VoluntaryController extends Controller
      */
     public function create()
     {
-        //
+        return view('Voluntary.create');
     }
 
     /**
@@ -34,9 +35,20 @@ class VoluntaryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VoluntaryRequest $request)
     {
-        //
+        $VoluntaryN= new Voluntary;
+        $VoluntaryN->id= $request->id;
+        $VoluntaryN->nombre= $request->nombre;
+        $VoluntaryN->apellido1= $request->apellido1;
+        $VoluntaryN->apellido2= $request->apellido2;
+        $VoluntaryN->telefono= $request->id;
+        $VoluntaryN->direccion= $request->direccion;
+        $VoluntaryN->email= $request->email;
+        $VoluntaryN->descripcion= $request->descripcion;
+
+        $VoluntaryN->save;
+        return redirect()->route('Voluntary.index');
     }
 
     /**
@@ -45,9 +57,10 @@ class VoluntaryController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function show(Voluntary $voluntary)
+    public function show(Voluntary $id)
     {
-        //
+        $VoluntaryB = Voluntary::find($id); 
+        return view('Voluntary.show',compact('VoluntaryB'));
     }
 
     /**
@@ -56,9 +69,12 @@ class VoluntaryController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function edit(Voluntary $voluntary)
+    public function edit(Voluntary $id)
     {
-        //
+
+    $VoluntaryE = Voluntary::find($id);
+    return view('Voluntary.edit', compact('VoluntaryE'));
+
     }
 
     /**
@@ -68,9 +84,19 @@ class VoluntaryController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Voluntary $voluntary)
+    public function update(Request $request, Voluntary $id)
     {
-        //
+        $VoluntaryU = Voluntary::find($id);
+        $VoluntaryU->id = $request->id;
+        $VoluntaryU->nombre = $request->nombre;
+        $VoluntaryU->apellido = $request->apellido1;
+        $VoluntaryU->apellido = $request->apellido2;
+        $VoluntaryU->apellido = $request->telefono;
+        $VoluntaryU->apellido = $request->direccion;
+        $VoluntaryU->apellido = $request->email;
+        $VoluntaryU->apellido = $request->descripcion;
+        $VoluntaryU->save();
+        return redirect()->route('Voluntary.index');
     }
 
     /**
@@ -79,8 +105,8 @@ class VoluntaryController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Voluntary $voluntary)
+    public function destroy(Voluntary $id)
     {
-        //
+        $VoluntaryE = Voluntary::find($id); $VoluntaryE->delete();
     }
 }
