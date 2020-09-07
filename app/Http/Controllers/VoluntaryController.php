@@ -26,7 +26,7 @@ class VoluntaryController extends Controller
      */
     public function create()
     {
-        return view('Voluntary.create')
+        return view('Voluntary.create');
     }
 
     /**
@@ -57,9 +57,10 @@ class VoluntaryController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function show(Voluntary $voluntary)
+    public function show(Voluntary $id)
     {
-        //
+        $VoluntaryB = Voluntary::find($id); 
+        return view('Voluntary.show',compact('VoluntaryB'));
     }
 
     /**
@@ -68,9 +69,12 @@ class VoluntaryController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function edit(Voluntary $voluntary)
+    public function edit(Voluntary $id)
     {
-        //
+
+    $VoluntaryE = Voluntary::find($id);
+    return view('Voluntary.edit', compact('VoluntaryE'));
+
     }
 
     /**
@@ -80,9 +84,19 @@ class VoluntaryController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Voluntary $voluntary)
+    public function update(Request $request, Voluntary $id)
     {
-        //
+        $VoluntaryU = Voluntary::find($id);
+        $VoluntaryU->id = $request->id;
+        $VoluntaryU->nombre = $request->nombre;
+        $VoluntaryU->apellido = $request->apellido1;
+        $VoluntaryU->apellido = $request->apellido2;
+        $VoluntaryU->apellido = $request->telefono;
+        $VoluntaryU->apellido = $request->direccion;
+        $VoluntaryU->apellido = $request->email;
+        $VoluntaryU->apellido = $request->descripcion;
+        $VoluntaryU->save();
+        return redirect()->route('Voluntary.index');
     }
 
     /**
@@ -91,8 +105,8 @@ class VoluntaryController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Voluntary $voluntary)
+    public function destroy(Voluntary $id)
     {
-        //
+        $VoluntaryE = Voluntary::find($id); $VoluntaryE->delete();
     }
 }

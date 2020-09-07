@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
 
+
+

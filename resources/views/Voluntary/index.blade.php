@@ -36,7 +36,12 @@
                 <td>{{$Voluntary->email}}</td>
                 <td>{{$Voluntary->descripcion}}</td>
 
-            </tr>
+               <td><a href="{{ route('voluntary.show', $Voluntary->id) }}">ver</a></td> 
+               <td><a href="{{ route('voluntary.edit', $Voluntary->id) }}">editar</a></td>
+               <td> <form action="{{route('Voluntary.destroy', $Voluntary->id)}}" method='POST'> 
+                            {{ csrf_field() }} <input type="hidden" name="_method" value="DELETE"> 
+                            <button class="btn btn-link">eliminar</button> </form></td>
+           </tr>
         @endforeach
     </tbody>
  </table>
