@@ -12,14 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('indexInformation');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//Route::get('/carro', 'layout');
+
 Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
+
 //Route::post('/', );
 //Route::get('/', funtion(){
   //  return view('layout');
@@ -27,7 +28,7 @@ Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
 Route::resource('/galeria','InformationController');
 Route::resource('/crear','InformationController@create');
 // Rutas CRUD
- //
+ 
 /* Crear */
 Route::get('admin/information/create', 'InformationController@create')->name('admin/information/create');
 Route::put('admin/information/store', 'InformationController@store')->name('admin/information/store');
