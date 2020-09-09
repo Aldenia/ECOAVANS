@@ -27,7 +27,7 @@ Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
 Route::resource('/galeria','InformationController');
 Route::resource('/crear','InformationController@create');
 // Rutas CRUD
- 
+ //
 /* Crear */
 Route::get('admin/information/create', 'InformationController@create')->name('admin/information/create');
 Route::put('admin/information/store', 'InformationController@store')->name('admin/information/store');
