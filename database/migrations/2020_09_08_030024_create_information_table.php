@@ -15,8 +15,12 @@ class CreateInformationTable extends Migration
     {
         Schema::create('information', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('name');
+            $table->integer('image')->unsigned();
+            $table->string('url');
+
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
