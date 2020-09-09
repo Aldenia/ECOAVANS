@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateVoluntariesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('voluntaries', function (Blueprint $table) {
+            $table->bigIncrements('id', 20)->unique();
+            $table->string('Nombre');
+            $table->string('Apellido 1');
+            $table->string('Apellido 2');
+            $table->string('Telefono');
+            $table->string('Direccion');
+            $table->string('Email');
+            $table->string('Descripcion');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('voluntaries');
+    }
+}

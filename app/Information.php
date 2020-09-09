@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Information extends Model
 {
-    protected $fillable = [
-    'id', 'tittle', 'body',
-    ];
+    protected $table = 'information';
+    protected $fillable = ['name',  'image', 'url'];
+
+    public function imageinformation()
+    {
+        return $this->hasMany('App\Imginformation');
+    }
 }
