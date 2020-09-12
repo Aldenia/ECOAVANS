@@ -14,6 +14,6 @@ class Voluntary extends Model
         'Telefono',
         'Direccion',
         'Email',
-        'Descripcion'
+        'Descripcion',
     ];  
 }

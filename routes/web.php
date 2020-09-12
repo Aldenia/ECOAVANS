@@ -11,16 +11,25 @@
 |
 */
 
+use Illuminate\Routing\Console\MiddlewareMakeCommand;
+
 Route::get('/', function () {
     return view('indexInformation');
 });
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
+Route::get('/voluntary','VoluntaryController@index')->name('Voluntario');
 
+
+Route::get('/admin/user/roles',['Middleware'=>['role','auth', 'web'],  function () {
+
+    return 'Middleware role';}]);
+
+Route::get('/admin', 'AdminController@index'); 
 //Route::post('/', );
 //Route::get('/', funtion(){
   //  return view('layout');
@@ -48,3 +57,7 @@ Route::get('admin/information/deleteimage/{id}{bid}', 'InformationController@del
  
 /* Vista para los detalles de un registro */
 Route::get('admin/information/details/{id}', ['as' => 'admin/information/details', 'uses' => 'InformationController@details']);
+
+
+
+

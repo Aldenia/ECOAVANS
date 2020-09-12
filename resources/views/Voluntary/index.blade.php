@@ -3,11 +3,11 @@
     <div class="col-sm-8">
         <h2>
             <br > Listado de voluntarios
-            <a href="{{ route('Voluntary.create') }}" class="btn btn-primary pull-right">nuevo</a>
+            <a href="{{ route('voluntary.create') }}" class="btn btn-primary pull-right">nuevo</a>
         </h2>
         <div class="row">
     </div>
-    <form action="{{route('Voluntariado.index')}}" method="POST">
+    <form action="{{route('voluntary.index')}}" method="POST">
     </form>
     <table class="table table-hover table-striped">
         <thead>
@@ -25,7 +25,7 @@
 
         </thead>
     <tbody>
-        @foreach ($Voluntary as $voluntary)
+        @foreach ($voluntary as $Voluntary)
             <tr>
                 <td>{{$Voluntary->id}}</td>
                 <td>{{$Voluntary->nombre}}</td>
