@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  color: #125be4;
+  color: #003699;
 }
 
 a:hover {
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 #preloader:before {
@@ -45,8 +45,8 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #106eea;
-  border-top-color: #e2eefd;
+  border: 6px solid #10eaea;
+  border-top-color: #fdfae2;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -114,11 +114,11 @@ h1, h2, h3, h4, h5, h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #106eea;
+  background: #67772b;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 #topbar.topbar-scrolled {
@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #topbar .contact-info a {
   line-height: 1;
-  color: #fff;
+  color: rgb(255, 255, 255);
   transition: 0.3s;
 }
 
@@ -145,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .social-links a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(189, 187, 74, 0.6);
   padding-left: 15px;
   display: inline-block;
   line-height: 1px;
@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
+  background: rgb(206, 228, 125);
   transition: all 0.5s;
   z-index: 997;
   padding: 25px 0;
@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo a span {
-  color: #106eea;
+  color: #6c8db9;
 }
 
 #header .logo img {
@@ -243,7 +243,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #106eea;
+  background-color: #c3da5e;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -255,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #106eea;
+  color: #e79906;
 }
 
 .nav-menu .drop-down ul {
@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 15px;
   z-index: 9999;
   overflow-y: auto;
-  background: #fff;
+  background: rgb(226, 157, 100);
   transition: ease-in-out 0.2s;
   opacity: 0;
   visibility: hidden;
@@ -455,7 +455,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(201, 184, 184, 0.6);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -505,7 +505,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
-  background: #106eea;
+  background: #668827;
 }
 
 #hero .btn-get-started:hover {

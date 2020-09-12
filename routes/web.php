@@ -11,15 +11,23 @@
 |
 */
 
+use Illuminate\Routing\Console\MiddlewareMakeCommand;
+
 Route::get('/', function () {
     return view('indexInformation');
 });
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
+Route::get('/voluntary','VoluntaryController@index')->name('Voluntario');
 
+Route::get('/admin/user/roles',['Middleware'=>['role','auth', 'web'],  function () {
 
+    return 'Middleware role';
+    
+}]);
 
+Route::get('/admin', 'AdminController@index'); 
