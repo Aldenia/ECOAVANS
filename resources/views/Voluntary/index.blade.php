@@ -1,14 +1,17 @@
-@extends('layout')
+@extends('app')
 @section('content')
-    <div class="col-sm-8">
+<div class="container">
+<div class="row justify-content-center">
+
+    <div class="col-sm-12">
         <h2>
             <br > Listado de voluntarios
-            <a href="{{ route('Voluntary.create') }}" class="btn btn-primary pull-right">nuevo</a>
+           <!-- <a href="{{ route('Voluntary.create') }}" class="btn btn-primary pull-right">nuevo</a>-->
         </h2>
         <div class="row">
     </div>
-    <form action="{{route('Voluntariado.index')}}" method="POST">
-    </form>
+   <!-- <form action="{{route('Voluntariado.index')}}" method="POST">
+    </form>-->
     <table class="table table-hover table-striped">
         <thead>
             <tr>
@@ -36,11 +39,12 @@
                 <td>{{$Voluntary->email}}</td>
                 <td>{{$Voluntary->descripcion}}</td>
 
-               <td><a href="{{ route('voluntary.show', $Voluntary->id) }}">ver</a></td> 
+             <!--  <td><a href="{{ route('voluntary.show', $Voluntary->id) }}">ver</a></td> 
                <td><a href="{{ route('voluntary.edit', $Voluntary->id) }}">editar</a></td>
-               <td> <form action="{{route('Voluntary.destroy', $Voluntary->id)}}" method='POST'> 
+               <td> 
+               <form action="{{route('Voluntary.destroy', $Voluntary->id)}}" method='POST'> 
                             {{ csrf_field() }} <input type="hidden" name="_method" value="DELETE"> 
-                            <button class="btn btn-link">eliminar</button> </form></td>
+                            <button class="btn btn-link">eliminar</button> </form></td>-->
            </tr>
         @endforeach
     </tbody>
@@ -48,4 +52,6 @@
  
  {!! $voluntary->render()!!}
  </div>
+ </div>
+</div>
 @endsection

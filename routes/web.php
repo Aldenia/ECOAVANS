@@ -15,11 +15,21 @@ Route::get('/', function () {
     return view('indexInformation');
 });
 
+Route::get('/admin', function () {
+    return view('indexAdmin');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/Voluntariado','VoluntaryController@index')->name('Voluntario');
+Route::resource('/voluntariado','VoluntaryController');
 
+Route::resource('/ejemplo', 'ExaVolController');
 
+//SI FUNCIONA
+Route::get('hola', function(){
+    return view('layout');
+});
 
+route::view('/app', 'layouts.app');
