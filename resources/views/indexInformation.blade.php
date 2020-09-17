@@ -35,7 +35,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="cuerpo">
 
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
@@ -114,7 +114,7 @@
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <h1>Bienvenidos al <span>Ecomuseo</spa>
       </h1>
-      <h2>Este es el ecomuseo de Abangares</h2>
+      <h2>Minas de oro Abangares</h2>
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Empecemos</a>
         <a href="https://www.youtube.com/watch?v=Uof7jmeYczU" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Ver Video <i class="icofont-play-alt-2"></i></a>
@@ -873,15 +873,15 @@
           <div class="col-lg-6">
             <div class="info-box mb-4">
               <i class="bx bx-map"></i>
-              <h3>Nuestra Dirección</h3>
-              <p> De la iglesia catlica de La Sierra de Abangares, 600 metros este, Guanacaste,Costa Rica. </p>
+              <h3>Ubicación</h3>
+              <p></p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
-              <h3>Email Us</h3>
+              <h3>Email</h3>
               <p>ecoavans@gmail.com</p>
             </div>
           </div>
@@ -889,7 +889,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
-              <h3>Call Us</h3>
+              <h3>Contactanos</h3>
               <p>+506 2662 0004</p>
             </div>
           </div>
@@ -898,28 +898,27 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-lg-6 ">
-            <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+          <div class="col-lg-6 " >
+          <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251255.89784848035!2d-85.34835049027099!3d10.271782895348275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa01e3c298e75bb%3A0xc1f9da3951795615!2sEcomuseo%20de%20las%20Minas%20de%20Abangares!5e0!3m2!1ses-419!2scr!4v1600228907172!5m2!1ses-419!2scr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
-
           <div class="col-lg-6">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre Completo" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="col form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
@@ -945,10 +944,10 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Noticias</h4>
+            <p>Únete a nuestras noticias</p>
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email"><input type="submit" value="Suscríbete">
             </form>
           </div>
         </div>
@@ -960,28 +959,28 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>BizLand<span>.</span></h3>
+            <h3>Ecomuseo de las minas de Abangares<span>.</span></h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong>+506 2662 0004<br>
-              <strong>Email:</strong> info@example.com<br>
+              Ubicación <br>
+              La Sierra, Abangares<br>
+              Guanacaste, Costa Rica <br><br>
+              <strong>Telefono:</strong>+506 2662 0004<br>
+              <strong>Email:</strong> ecoavans@gmail.com<br>
             </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Enlaces útiles</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre nosotros</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Servicios</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Termino de servicios</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Politica de privacidad</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+ <!--         <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
@@ -990,11 +989,11 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <h4>Otras redes sociales</h4>
+            <p>Siguenos en todas nuestras redes sociales</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -1026,16 +1025,16 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
-  <script src="vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="vendor/counterup/counterup.min.js"></script>
-  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendor/venobox/venobox.min.js"></script>
-  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/jquery/jquery.min.js" asp-append-version="true"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+  <script src="vendor/jquery.easing/jquery.easing.min.js" asp-append-version="true"></script>
+  <script src="vendor/php-email-form/validate.js" asp-append-version="true"></script>
+  <script src="vendor/waypoints/jquery.waypoints.min.js" asp-append-version="true"></script>
+  <script src="vendor/counterup/counterup.min.js" asp-append-version="true"></script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js" asp-append-version="true"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js" asp-append-version="true"></script>
+  <script src="vendor/venobox/venobox.min.js" asp-append-version="true"></script>
+  <script src="vendor/aos/aos.js" asp-append-version="true"></script>
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
