@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('indexInformation');
 });
 
+Auth::routes();
 
-
-
+Route::get('/home', 'HomeController@index')->name('home');
 
 //SI FUNCIONA
 Route::get('hola', function(){
@@ -27,3 +27,6 @@ Route::get('hola', function(){
 });
 
 route::view('/app', 'layouts.app');
+
+Route::resource ('/voluntariado', 'Voluntary.index');
+
