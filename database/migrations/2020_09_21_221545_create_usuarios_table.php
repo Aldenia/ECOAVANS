@@ -4,9 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
 class CreateExaVolsTable extends Migration
-
 //class CreateUsuariosTable extends Migration
 {
     /**
@@ -22,7 +20,6 @@ class CreateExaVolsTable extends Migration
             $table->string('Apellido 1');
             $table->string('Email');
             $table->string('Descripcion');
-
             $table->timestamps();
         });
     }
@@ -34,8 +31,8 @@ class CreateExaVolsTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('exa_vols');
+        Schema::dropIfExists('exa_vols');
 
-        Schema::dropIfExists('usuarios');
-   }
+//        Schema::dropIfExists('usuarios');
+    }
 }
