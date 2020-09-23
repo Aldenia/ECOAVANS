@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,17 +12,31 @@
 */
 
 use Illuminate\Routing\Console\MiddlewareMakeCommand;
+use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('indexInformation');
-});
+
+
+
+
+Route::get('/', 'PrincipalController@welcome');
+Route::get('/about','PrincipalController@about' );
+Route::get('/welcome','PrincipalController@welcome')->name('welcome');
+Route::get('/nosotros','PrincipalController@nosotros')->name('nosotros');
+
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/voluntary','VoluntaryController@index')->name('Voluntario');
+
+
+
+
+
+
+
+
 
 
 //Route::post('/', );
