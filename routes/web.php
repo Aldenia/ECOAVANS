@@ -25,11 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/voluntary','VoluntaryController@index')->name('Voluntario');
 
 
-Route::get('/admin/user/roles',['Middleware'=>['role','auth', 'web'],  function () {
-
-    return 'Middleware role';}]);
-
-Route::get('/admin', 'AdminController@index'); 
 //Route::post('/', );
 //Route::get('/', funtion(){
   //  return view('layout');
