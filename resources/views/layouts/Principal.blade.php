@@ -58,20 +58,20 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Ecomuseo<span>.</span></a></h1>
+      <h1 class="logo mr-auto"><a href="{{route('welcome')}}">Ecomuseo<span>.</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-        <li class="<?php if($page =='welcome'){echo 'active';} ?>" ><a href="{{route('welcome')}}">Inicio</a></li>
-        <li class="<?php if($page  =='nosotros'){echo 'active';} ?>"  ><a href="{{route ('nosotros')}}">Sobre nosotros</a></li>
+            <li class="<?php if($page =='welcome'){echo 'active';} ?>"> <a href="{{route('welcome')}}">Inicio</a></li>
+            <li class="<?php if($page  == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}">Sobre nosotros</a></li>
+            <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}">Actividades</a></li>
+            <li><a href="#portfolio">Galeria</a></li>
+          
 
-          <li><a href="#portfolio">Galeria</a></li>
-          <li><a href="#team">Equipo</a></li>
 
-
-          <li class="drop-down"><a href="">Drop Down</a>
+         <!-- <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="drop-down"><a href="#">Deep Drop Down</a>
@@ -87,12 +87,13 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
+          </li>-->
+
           <li><a href="#contact">Contactos</a></li>
 
 
           <li>
-          @if (Route::has('login'))
+         <!--  @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -101,12 +102,78 @@
 
                     @endauth
                 </div>
-            @endif
-          </li>
+            @endif-->
+
+            @if (Auth::guest())
+          <li  class="dropdown <?php if($page =='login' || $page  =='register' || $page  =='edit' || $page =='home' ){echo 'active';} ?>">
+            <a class="nav-link" data-toggle="dropdown" href="#">   Iniciar sesión  <i class="fas fa-caret-down"></i> </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <ul>           
+              <li class=" black <?php if($page  =='login'){echo 'active';} ?>">
+                <a href="{{ route('login') }}" class="dropdown-item"> <i class="fas fa-user-circle"></i>   Ingresar</a></li>
+              <div class="dropdown-divider"></div>
+              <li class=" black <?php if($page  =='register'){echo 'active';} ?>"  >
+
+                <a href="{{route('register')}}" class="dropdown-item"><i class="fas fa-user-plus"></i>  Registrarse</a></li>
+            </ul>     
+        </li>
+          @else
+            <li class="dropdown <?php if($page  =='edit'){echo 'active';} ?>">
+
+              <a class="nav-link" data-toggle="dropdown" href="#">  {{ Auth::user()->name }} <i class="fas fa-caret-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <ul>   
+              <li class="black">            
+              <!--<a href="{{route('Admin.inicio')}}" class="dropdown-item">
+                 <i class="fas fa-th-large"></i>    Administración</li></a>
+                </li>
+                <div class="dropdown-divider"></div>
+
+                <li class=" black <?php if($page  =='edit'){echo 'active';} ?>">
+
+                  <a href="{{ route ('auth.edit' , Auth::user()->id )}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i>   Gestionar cuenta</li></a>
+                <form action="" method="POST" class="d-inline">-->
+                @method('PUT')
+                @csrf
+                </form>
+
+              {{-- @foreach ($collection as $item)
+                  
+              @endforeach --}}
+
+
+                <div class="dropdown-divider"></div>
+                <li class="black">
+                  <a href="{{ route ('actividad')}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i> Mostrar Actividades</li></a>
+                <form action="" method="POST" class="d-inline">
+                @method('PUT')
+                @csrf
+                </form>
+
+
+                <div class="dropdown-divider"></div>
+                <li class=" black" > <a  href="{{ route('logout') }}"  class="dropdown-item"
+                  onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+                  <i class="fas fa-sign-out-alt"></i>  {{ __('Cerrar sesión') }}</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                  </form>
+              </ul>
+            </li> 
+          @endif
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+        <!--  </li>
         </ul>
       </nav><!-- .nav-menu -->
 
-    </div>
+   <!-- </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
@@ -116,13 +183,132 @@
       </h1>
       <h2>Minas de oro Abangares</h2>
       <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Empecemos</a>
+        <a href="{{route('nosotros')}}" class="btn-get-started scrollto">Empecemos</a>
         <a href="https://www.youtube.com/watch?v=Uof7jmeYczU" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Ver Video <i class="icofont-play-alt-2"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
+
+<!-- ======= portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Galeria</h2>
+          <h3>Consulte nuestra <span>Galeria</span></h3>
+          <p> Atractivos del Ecomuseo mina de oro de Abangares </p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="img/portfolio/corredorBiologicoMonoAullador.jpeg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Corredor Biologico del mono aullador</h4>
+              <p>Información</p>
+              <a href="img/portfolio/corredorBiologicoMonoAullador.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="img/portfolio/Ecoantigua.jpeg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="img/portfolio/Ecoantigua.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="img/portfolio/EcoBosque.jpeg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 2</h4>
+              <p>App</p>
+              <a href="img/portfolio/EcoBosque.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="img/portfolio/Ecotrail.jpeg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <a href="img/portfolio/Ecotrail.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="img/portfolio/MapaEcomuseo.jpeg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <a href="img/portfolio/MapaEcomuseo.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="img/portfolio/TrenEco.jpeg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <a href="img/portfolio/TrenEco.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="img/portfolio/EcoSendero.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <a href="img/portfolio/EcoSendero.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="img/portfolio/EcoMaquina.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <a href="img/portfolio/EcoMaquina.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="img/portfolio/EcoCarreta.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="img/portfolio/EcoCarreta.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+  </section>
+
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">

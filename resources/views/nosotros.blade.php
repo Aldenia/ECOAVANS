@@ -1,6 +1,8 @@
-  @extends('layouts.Principal')
+  @extends('layouts.app')
   @section('content')
+
   <?php $page = 'nosotros'; ?>
+  <br><br><br>
   <!-- ======= About Section ======= -->
   <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
@@ -61,4 +63,5 @@
       </div>
  
   </section>
-   @endsection
+<br><br><br>
+@endsection

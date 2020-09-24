@@ -10,7 +10,7 @@ use App\User;
 
 class PrincipalController extends Controller
 {
-    //
+    
     public function index()
     {
         
@@ -28,10 +28,7 @@ class PrincipalController extends Controller
         return view('welcome');
     }
 
-    public function galeria()
-    {
-        return view('galeria');
-    }
+   
     public function actividad()
     {
         return view('actividad');
@@ -41,7 +38,13 @@ class PrincipalController extends Controller
     {
         return view('nosotros');
     }
-
-
+    public function galeria()
+    {
+        return view('galeria');
+    }
+    public function voluntary()
+    {
+        return view('voluntary');
+    }
 
 }

@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsuariosTable extends Migration
+class CreateExaVolsTable extends Migration
+//class CreateUsuariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +14,12 @@ class CreateUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('exa_vols', function (Blueprint $table) {
+            $table->bigIncrements('id', 20)->unique();
+            $table->string('Nombre');
+            $table->string('Apellido 1');
+            $table->string('Email');
+            $table->string('Descripcion');
             $table->timestamps();
         });
     }
@@ -26,6 +31,8 @@ class CreateUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('exa_vols');
+
+//        Schema::dropIfExists('usuarios');
     }
 }
