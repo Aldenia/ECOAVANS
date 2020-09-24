@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                ({{('Ha iniciado sesión')}}
+                {{('Ha iniciado sesión')}}
                 </div>
             </div>
         </div>

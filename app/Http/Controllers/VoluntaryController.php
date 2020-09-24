@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Voluntary;
 use Illuminate\Http\Request;
+use App\Volunatary;
 use App\Http\Requests\VoluntaryRequest;
 
 class VoluntaryController extends Controller
@@ -15,9 +16,13 @@ class VoluntaryController extends Controller
      */
     public function index()
     {
-        $voluntary = voluntary::orderBy('id', 'DESC')->paginate();
-        return view('voluntary.index', compact('voluntary'));
-    }
+         $voluntaryC = Voluntary::all();
+        //$Voluntary = Voluntary::orderBy('id', 'DESC')->paginate();
+        return view('Voluntary.index')->with('Voluntary', $voluntaryC);
+
+        //$voluntary = voluntary::orderBy('id', 'DESC')->paginate();
+       // return view('voluntary.index', compact('voluntary'));
+ }
 
     /**
      * Show the form for creating a new resource.
