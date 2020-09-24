@@ -1,56 +1,98 @@
-@extends('layouts.indexInformation')
-@section('content')
+@extends('layouts.app')
+  @section('content')
 
-<!--<php $page = 'actividad'; ?>-->
- 
-<br><br><br><br><br> 
+    <?php $page='actividad';?>
+      <div class="container" data-aos="fade-up">
 
-<div class="row">    
-    <div class=" text-center border-light card text-white bg-dark mx-auto " style="width:54rem;" >      
-        <div class="card-header">  
-              <h2>Actividades</h2>          
-              <hr style="width:300px; height:2px;border-width:0;color:gray;background-color:gray">
-        </div>   
-    </div>
-</div>   
- <br>    
-<div class="row"> 
-       <div class=" text-center border-light card text-black bg-light mx-auto " style="width:70rem;" >     
-       <div class="card-header card text-black"> 
+        <div class="section-title">
+          <h2>Actividades</h2>
+          <h3>Consulte nuestras <span>actividades</span></h3>
+          <h4>Te invitamos a conocernos por medio de las actividades que se realizan en el Ecomuseo de las minas de Abangares.</h4>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              
+                  <h3><a href="">Auditorio para eventos</a></h4>
+                  <p></p>
+                  <img src="img/eventos.jpg" class="rounded float-right img-fluid" alt="...">
 
-       <h2>Actividades activas</h2>    
-        </div>  
-     <div class="container">              
-                      <table class="table">                    
-                        <thead>                      
-                          <tr>                                              
-                              <th scope="col">Nombre</th>      
-                              <th scope="col">Inicio</th>  
-                              <th scope="col">Fin</th>      
-                              <th scope="col">Fecha</th>               
-                              <th scope="col">Descripcion</th>                  
-                          @foreach($evento as $item)                         
-                          <tr>                                                                        
-                                <th scope="row">{{$item->NombreActividad}}</th>                                    
-                                <th scope="row">{{$item->HoraInicioActividad}}</th>                                  
-                                <th scope="row">{{$item->HoraFinalActividad}}</th>                                   
-                                <th scope="row">{{$item->FechaActividad}}</th>                                    
-                                <th scope="row">{{$item->DescripcionActividad}}</th>                                                                    
-                                
-                                {{-- <div class="btn-group"> --}}     
-                                                                                                                                                                         
-                                    <td> <a href="{{route ('Usuario.crearAsistencia',$item )}}" class="btn btn-primary" >Asistir</a></td>
-                                
-                                    <td><a href="{{route ('registrardonacionMaterial' )}}" class="btn btn-success ">Donar</a></td>          
-                                {{-- </div> --}}                                                                       
-                </tr>                          
+              </div>
+            </div>
+         
+         
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box">
+
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="">Museo con exhibición permanente</a></h4>
+                <p></p>
+                <img src="img/auditorio.jpg" class="rounded float-right img-fluid" alt="...">
                 
-                                                                                                                      
-                @endforeach()                                
-            </tr>                               
-         </thead>                            
-    </table>                            
-</div>            
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <h4><a href="">Galería piezas históricas</a></h4>
+                <p></p>
+                <img src="img/piezas.jpeg" class="rounded float-right img-fluid" alt="...">
+
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+
+              
+                <div class="icon"><i class="bx bx-world"></i></div>
+                <h4><a href="">Tours y visitas guiadas</a></h4>
+                <p></p>
+                <img src="img/tour.jpg" class="rounded float-left img-fluid" alt="...">
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box">
+
+                
+                <div class="icon"><i class="bx bx-slideshow"></i></div>
+                <h4><a href="">Senderismo y Hiking</a></h4>
+                <p></p>
+                <img src="img/senderismo.jpg" class="rounded float-center img-fluid" alt="...">
+
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+
+                
+                <div class="icon"><i class="bx bx-arch"></i></div>
+                <h4><a href="">Avistamiento de aves</a></h4>
+                <p></p>
+                <img src="img/avistamiento.jpg" class="rounded float-right img-fluid" alt="...">
+
+              </div>
+            </div>
+
+          </div>
 
 
-
+          {{-- <div class="btn-group"> --}}
+                  <td> <a <?php if($page =='voluntary'){echo 'active';} ?>"> <a href="{{route('voluntary')}}" class="btn btn-primary" >Voluntariado</a></td>
+          {{-- </div> --}}
+          {{-- <div class="btn-group"> --}}
+                  <td> <a <?php if($page =='voluntary'){echo 'active';} ?>"> <a href="{{route('voluntary')}}" class="btn btn-primary" >Reserve aquí</a></td>
+          {{-- </div> --}}
+          {{-- <div class="btn-group"> --}}
+                  <td> <a <?php if($page =='voluntary'){echo 'active';} ?>"> <a href="{{route('voluntary')}}" class="btn btn-primary" >Donaciones</a></td>
+          {{-- </div> --}}
+        </div>
+     
+  @endsection

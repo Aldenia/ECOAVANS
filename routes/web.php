@@ -1,28 +1,62 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 use Illuminate\Routing\Console\MiddlewareMakeCommand;
+use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('layouts.indexInformation');
-});
+
+
+
+
+Route::get('/', 'PrincipalController@welcome');
+//Route::get('/about','PrincipalController@about' );
+
+Route::get('/welcome','PrincipalController@welcome')->name('welcome');
+Route::get('/nosotros', 'PrincipalController@nosotros')->name('nosotros');
+Route::get('/actividad', 'PrincipalController@actividad')->name('actividad');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//ADMIN
+Route::get('/layout','AdminController@inicio')->name('Admin.inicio');
+Route::get('/inventario','AdminController@inventario')->name('Admin.inventario');
+Route::get('/usuarios','AdminController@usuarios')->name('Admin.usuarios');
+Route::get('/editarUsuario/{data}','AdminController@editarUsuario')->name('Admin.editarUsuario');
+Route::put('/editarUsuario/{data}','AdminController@actualizarUsuario')->name('Admin.actualizarUsuario');
+Route::get('/actividades','AdminController@actividades')->name('Admin.Actividades');
+Route::post('/actividades', 'AdminController@crearActividades')->name('Actividades.crearActividad');
+Route::get('/editarActividad/{CodActividad}', 'AdminController@editarActividad')->name('Admin.editarActividad');
+Route::put('/editarActividad/{CodActividad}', 'AdminController@actualizarActividad')->name('Actividades.actualizarActividad');
+Route::get('/eliminar/{CodActividad}', 'AdminController@eliminarActividad')->name('Actividades.eliminarActividad');
+Route::get('/crear','AdminController@crear')->name('Admin.crear');
+Route::post('/crear', 'AdminController@crearActivades')->name('Actividades.crearActividades');
 
 
-//Route::get('/Actividad', 'ActividadController')->name('actividad');
+//auth
+Route::get('/edit/{data}','UserController@edit')->name('auth.edit');
+
+Route::get('/edit/{data}','UserController@edit')->name('auth.edit');
+Route::put('/edit/{data}','UserController@update')->name('auth.update');
+Route::get('/destroy/{data}','UserController@destroy')->name('user.destroy');
+Route::get('/event','AdminController@evento')->name('evento');
+Route::get('/asistencia', 'TblasistenciaController@Asistencia')->name('Usuario.asistencia');
+Route::get('/asistenciauser', 'TblasistenciaController@AsistenciaUser')->name('Usuario.asistUser');
+Route::post('/asistencia', 'TblasistenciaController@create')->name('asistencia.crearAsistencia');
+
+
+Route::get('/asistenciaU', 'TblasistenciaController@UsuarioAsist')->name('Usuario.UsuarioAsist');
+
+
+Route::get('/crearAsistencia/{CodEvento}','TblasistenciaController@crearAsistencia')->name('Usuario.crearAsistencia');
+Route::post('/crearAsistencia', 'TblasistenciaController@Crear')->name('asistencia.crearAsist');
+
+//voluntariado
+Route::get('/voluntario', 'PrincipalController@voluntary')->name('voluntary');
+
 
 //SI FUNCIONA
 Route::get('hola', function(){
