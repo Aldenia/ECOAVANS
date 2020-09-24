@@ -50,6 +50,7 @@ class InformationController extends Controller
     // Proceso de Creación de un Registro 
     public function store(ItemCreateRequest $request)
     {
+        // dd($request->all());
         $information= new Information;
         $information->name = $request->name;
         $information->image = date('dmyHi');
@@ -70,9 +71,11 @@ class InformationController extends Controller
         // Recibimos una o varias imágenes y las guardamos en la carpeta 'uploads'
         foreach($request->file('img') as $image)
             {
+                // dd($image->getClientOriginalExtension());
                 $image = $image->getClientOriginalName();
                 $format = $image->getClientOriginalExtension();
-                $image->move(public_path().'/uploads/', $imagen);
+                $image->move(public_path().'/uploads/', $image);
+                
  
                 // Guardamos el nombre de la imagen en la tabla 'img_bicicletas'
                 DB::table('img_information')->insert(
@@ -225,4 +228,17 @@ class InformationController extends Controller
  
         return view('admin/information.details', compact('information', 'image'));
     }
+
+    // $input = $request->all();
+    // $user = Auth::user();
+    // if($file = $request->file('photo_id')) { 
+    //     $name = time() . $file->getClientOriginalName(); 
+    //     $file->move('images', $name); 
+    //     $photo = Photo::create(['file'=>$name]); 
+    //     $input['photo_id'] = $photo->id; 
+       
+    // }    
+    // $user->post()->create($input);  
+
+
 }
