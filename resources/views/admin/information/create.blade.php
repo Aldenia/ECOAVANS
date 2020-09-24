@@ -1,6 +1,6 @@
 <div class="panel-body">
  
-    {{ $message=Session::get('message') }} @include('alerts.request')
+    {{-- {{ $message=Session::get('message') }} @include('alerts.request') --}}
  
     <section class="example mt-4">
  
