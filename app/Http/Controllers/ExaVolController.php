@@ -15,7 +15,7 @@ class ExaVolController extends Controller
     public function index()
     {
         $exaVolC = exaVol::all();
-        return view('exaVol.index')->with('exaVol', $exaVolC);
+        return view('exaVol.ejemplo')->with('exaVol', $exaVolC);
  
     }
 

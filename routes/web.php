@@ -29,8 +29,8 @@ Route::get('hola', function(){
     return view('layout');
 });
 
-Route::get('/voluntary','VoluntaryController@index')->name('Voluntario');
-
+Route::resource('/voluntariado','VoluntaryController@index')->names('Voluntary/index');
+Route::resource('/ejemplo', 'ExaVolController');
 
 //Route::post('/', );
 //Route::get('/', funtion(){
@@ -64,5 +64,5 @@ Route::get('admin/information/details/{id}', ['as' => 'admin/information/details
 
 route::view('/app', 'layouts.app');
 
-Route::resource ('/voluntariado', 'Voluntary.index');
+//Route::resource ('/voluntariado', 'Voluntary.index');
 

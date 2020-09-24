@@ -1,35 +1,40 @@
-@extends('app')
+<!--@extends('layouts.indexInformation')
+
 @section('content')
 <div class="container">
-<div class="row justify-content-center">
+    <div class="row justify-content-center">
 
-    <div class="col-sm-12">
-        <h2>
-            <br > Listado de voluntarios
-
-           <!-- <a href="{{ route('Voluntary.create') }}" class="btn btn-primary pull-right">nuevo</a>-->
-        </h2>
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">{{_(general.dashboard)}} </div>
+                    <div class="card-body">
+                        <h2>
+                            <br > Listado de voluntarios
+                        <!-- <a href="{{ route('Voluntary.create') }}" class="btn btn-primary pull-right">nuevo</a>-->
+                      <!--  </h2>
+                    </div>
+            </div>    
         <div class="row">
-    </div>
+    </div>-->
    <!-- <form action="{{route('Voluntariado.index')}}" method="POST">
     </form>-->
     
-   <table class="table table-hover table-striped">
-        <thead>
-            <tr>
-                <th width="20px">ID</th>
-                <th >Nombre</th>
-                <th >Apellido</th>
-                <th >Apellido</th>
-                <th >Telefono</th>
-                <th >Dirección</th>
-                <th >Email</th>
-                <th >Descripción</th>
-                <th colspan="3">&nbsp;</th>
-            </tr>
+   <!-- <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th width="20px">ID</th>
+                    <th >Nombre</th>
+                    <th >Apellido</th>
+                    <th >Apellido</th>
+                    <th >Telefono</th>
+                    <th >Dirección</th>
+                    <th >Email</th>
+                    <th >Descripción</th>
+                    <th colspan="3">&nbsp;</th>
+                </tr>
 
-        </thead>
-    <tbody>
+            </thead>
+        <tbody>
         @foreach ($voluntary as $Voluntary)
             <tr>
                 <td>{{$Voluntary->id}}</td>
@@ -47,13 +52,33 @@
                <form action="{{route('Voluntary.destroy', $Voluntary->id)}}" method='POST'> 
                             {{ csrf_field() }} <input type="hidden" name="_method" value="DELETE"> 
                             <button class="btn btn-link">eliminar</button> </form></td>-->
-           </tr>
+         <!--  </tr>
         @endforeach
-    </tbody>
- </table>
+        </tbody>
+    </table>
  
- {!! $voluntary->render()!!}
- </div>
- </div>
+    {!! $voluntary->render()!!} 
+
 </div>
 @endsection
+-->
+
+<!--//--------------------------------------->
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+            <div class="card-header">{{_(general.dashboard)}} </div>
+
+                <div class="card-body">
+                Listado de voluntarios
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
