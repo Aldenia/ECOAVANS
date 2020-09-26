@@ -84,15 +84,11 @@
           </div>
 
 
+           
           {{-- <div class="btn-group"> --}}
-                  <td> <a <?php if($page =='voluntary'){echo 'active';} ?>"> <a href="{{route('voluntary')}}" class="btn btn-primary" >Voluntariado</a></td>
+                  <td> <a <?php if($page =='welcome'){echo 'active';} ?>"> <a href="{{route('welcome')}}" class="btn btn-primary" >Reserve aquí</a></td>
           {{-- </div> --}}
-          {{-- <div class="btn-group"> --}}
-                  <td> <a <?php if($page =='voluntary'){echo 'active';} ?>"> <a href="{{route('voluntary')}}" class="btn btn-primary" >Reserve aquí</a></td>
-          {{-- </div> --}}
-          {{-- <div class="btn-group"> --}}
-                  <td> <a <?php if($page =='voluntary'){echo 'active';} ?>"> <a href="{{route('voluntary')}}" class="btn btn-primary" >Donaciones</a></td>
-          {{-- </div> --}}
+         
         </div>
      
   @endsection

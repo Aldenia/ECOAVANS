@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.Principal')
 
 @section('content')
+
+<?php $page='home';?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

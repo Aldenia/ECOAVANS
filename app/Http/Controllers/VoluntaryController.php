@@ -16,13 +16,9 @@ class VoluntaryController extends Controller
      */
     public function index()
     {
-         $voluntaryC = Voluntary::all();
-        //$Voluntary = Voluntary::orderBy('id', 'DESC')->paginate();
+        $voluntaryC = Voluntary::all();
         return view('Voluntary.index')->with('Voluntary', $voluntaryC);
-
-        //$voluntary = voluntary::orderBy('id', 'DESC')->paginate();
-       // return view('voluntary.index', compact('voluntary'));
- }
+    }
 
     /**
      * Show the form for creating a new resource.
