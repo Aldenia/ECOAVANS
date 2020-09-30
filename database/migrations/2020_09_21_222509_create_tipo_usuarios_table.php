@@ -14,7 +14,7 @@ class CreateTipoUsuariosTable extends Migration
     public function up()
     {
         Schema::create('tipo_usuarios', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->integer('IdTipoUsuario')->unique();
             $table->string('DescripcionTipoUsuario',30);
             $table->timestamps();
