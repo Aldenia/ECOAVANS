@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Actividad;
 use App\TipoUsuario;
+use App\Voluntary;
 use App;
 //use App\tbldonacionmaterial;
 
@@ -155,55 +156,10 @@ class AdminController extends Controller
 
         return back()->with('mensaje', 'Nota actualizada');
     }
-    
-/*    public function donacionMaterial()
-    { 
-        $data['donaciones']=tbldonacionmaterial::paginate(10);
-        return view('Admin.donacionesMat', $data);
-        
-    }
-    public function eliminarDonacionMaterial($CodDonacionMaterial)
+    public function voluntary()
     {
-        $donacEliminar = tbldonacionmaterial::findorFail($CodDonacionMaterial);
-        $donacEliminar->delete();
-
-        return back()->with('mensaje', 'Evento eliminado');
+        $voluntary = App\voluntary::all();
+        return view('voluntary', compact('voluntary'));
     }
-    public function editarDonacionMaterial($CodDonacionMaterial)
-    {   
-        $donaciones= tbldonacionmaterial::findOrFail($CodDonacionMaterial);
-        return view('Admin.editarDonacionesM', compact('donaciones'));
-    }
-
-    public function actualizarDonacionMaterial(Request $request, $CodDonacionMaterial)
-    {
-        $request->validate([
-            'CodDonacionMaterial' => 'required',
-            'NombreMaterial' => 'required',
-            'DescripcionMaterial'=>'required',
-            'RecibeMaterial'=>'required',
-            'CodEvento'=>'required',
-            'IdTipoDonacion'=>'required',
-           
-        ]);
-
-
-        $tbldonacionmaterialUpdate = tbldonacionmaterial::findorFail($CodDonacionMaterial);
-        $tbldonacionmaterialUpdate->CodDonacionMaterial = $request->CodDonacionMaterial;
-        $tbldonacionmaterialUpdate->NombreMaterial = $request->NombreMaterial;
-        $tbldonacionmaterialUpdate->DescripcionMaterial = $request->DescripcionMaterial;
-        $tbldonacionmaterialUpdate->RecibeMaterial = $request->RecibeMaterial;
-        $tbldonacionmaterialUpdate->CodEvento = $request->CodEvento;
-        $tbldonacionmaterialUpdate->IdTipoDonacion = $request->IdTipoDonacion;
-        
-        
-        $tbldonacionmaterialUpdate->save();
-
-        return back()->with('mensaje', 'Donacion actualizada');
-       
-    }
-    */
-
-
     
 }

@@ -19,7 +19,7 @@ Route::get('/actividad', 'PrincipalController@actividad')->name('actividad');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 //ADMIN
 Route::get('/layout','AdminController@inicio')->name('Admin.inicio');

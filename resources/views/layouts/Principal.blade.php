@@ -70,7 +70,12 @@
             <li><a href="#portfolio">Galeria</a></li>
           
 
-
+            <li class="drop-down"><a href="">Formularios</a>
+            <ul>
+              <li><a href="#">Voluntariado</a></li>
+              <li><a href="#">Donaciones</a></li>
+            </ul>
+          </li>
          <!-- <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -118,7 +123,7 @@
             </ul>     
         </li>
           @else
-            <li class="dropdown <?php if($page  =='edit'){echo 'active';} ?>">
+            <li class="dropdown <?php if($page  =='home'){echo 'active';} ?>">
 
               <a class="nav-link" data-toggle="dropdown" href="#">  {{ Auth::user()->name }} <i class="fas fa-caret-down"></i></a>
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -129,7 +134,7 @@
                 </li>
                 <div class="dropdown-divider"></div>
 
-                <li class=" black <?php if($page  =='edit'){echo 'active';} ?>">
+                <li class=" black < ?php if($page  =='edit'){echo 'active';} ?>">
 
                   <a href="{{ route ('auth.edit' , Auth::user()->id )}}" class="dropdown-item">
                    <i class="fas fa-cog"></i>   Gestionar cuenta</li></a>
@@ -144,9 +149,16 @@
 
 
                 <div class="dropdown-divider"></div>
+                  <li class="black">
+                    <a href="{{ route ('voluntary')}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i>Mostrar voluntarios</li></a>
+                <form action="" method="POST" class="d-inline">
+
+
+                <div class="dropdown-divider"></div>
                 <li class="black">
                   <a href="{{ route ('actividad')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i> Mostrar Actividades</li></a>
+                   <i class="fas fa-cog"></i> Mostrar actividades</li></a>
                 <form action="" method="POST" class="d-inline">
                 @method('PUT')
                 @csrf
@@ -179,7 +191,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>Bienvenidos al <span>Ecomuseo</spa>
+      <h1>Bienvenidos al <span> Ecomuseo</spa>
       </h1>
       <h2>Minas de oro Abangares</h2>
       <div class="d-flex">
@@ -197,7 +209,7 @@
 
         <div class="section-title">
           <h2>Galeria</h2>
-          <h3>Consulte nuestra <span>Galeria</span></h3>
+          <h3>Consulte nuestra <span>galeria</span></h3>
           <p> Atractivos del Ecomuseo mina de oro de Abangares </p>
         </div>
 
