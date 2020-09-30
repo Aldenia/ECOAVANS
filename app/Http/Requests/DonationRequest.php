@@ -24,7 +24,7 @@ class DonationRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            //coment
             'id'=>'requered',
             'donorName'=>'requered',
             'donationType.1'=>'requered', 
