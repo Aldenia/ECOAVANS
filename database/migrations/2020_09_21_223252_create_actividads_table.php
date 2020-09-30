@@ -14,7 +14,7 @@ class CreateActividadsTable extends Migration
     public function up()
     {
         Schema::create('actividads', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->integer('CodActividad')->unique();
             $table->string('NombreActivida',50);
             $table->time('HoraInicioActividad');
