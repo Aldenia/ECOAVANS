@@ -7,11 +7,22 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Ecomuseo') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="css/style.css" rel="stylesheet">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -24,7 +35,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Ecomuseo') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,6 +46,8 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
+
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -76,5 +89,20 @@
             @yield('content')
         </main>
     </div>
+
 </body>
+<!-- Vendor JS Files -->
+<script src="vendor/jquery/jquery.min.js" asp-append-version="true"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+  <script src="vendor/jquery.easing/jquery.easing.min.js" asp-append-version="true"></script>
+  <script src="vendor/php-email-form/validate.js" asp-append-version="true"></script>
+  <script src="vendor/waypoints/jquery.waypoints.min.js" asp-append-version="true"></script>
+  <script src="vendor/counterup/counterup.min.js" asp-append-version="true"></script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js" asp-append-version="true"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js" asp-append-version="true"></script>
+  <script src="vendor/venobox/venobox.min.js" asp-append-version="true"></script>
+  <script src="vendor/aos/aos.js" asp-append-version="true"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
 </html>

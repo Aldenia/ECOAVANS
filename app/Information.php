@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Information extends Model
 {
+
     protected $table = 'information';
     protected $fillable = ['name',  'image', 'url'];
 
@@ -13,4 +14,5 @@ class Information extends Model
     {
         return $this->hasMany('App\Imginformation');
     }
+
 }
