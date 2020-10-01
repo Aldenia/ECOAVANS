@@ -72,7 +72,8 @@
 
             <li class="drop-down"><a href="">Formularios</a>
             <ul>
-              <li><a href="#">Voluntariado</a></li>
+
+              <li><a href="{{ route('voluntary.create')}}">Voluntariado</a></li>
               <li><a href="#">Donaciones</a></li>
             </ul>
           </li>

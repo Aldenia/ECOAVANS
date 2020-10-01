@@ -24,17 +24,30 @@
                                 <th width="20px">ID</th>
                                 <th >Nombre</th>
                                 <th >Apellido</th>
-                                <th >Apellido</th>
-                                <th >Telefono</th>
+                                <th >Edad</th>
+                                <th >Teléfono</th>
                                 <th >Dirección</th>
                                 <th >Email</th>
+                                <th >Cantidad</th>
                                 <th >Descripción</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        
-                        </tbody>
+                    
+                        @foreach($voluntaryN as $voluntary)
+                            <tr class = "text-center">
+                                <td>{{ $voluntary->id }}</td>
+                                <td>{{ $voluntary->Nombre }}</td>
+                                <td>{{ $voluntary-> Apellido_1 }}&nbsp;{{ $voluntary-> Apellido_2 }}</td>
+                                <td>{{ $voluntary->Edad }}</td>
+                                <td>{{ $voluntary->Telefono }}</td>
+                                <td>{{ $voluntary->Direccion }}</td>
+                                <td>{{ $voluntary->Email }}</td>
+                                <td>{{ $voluntary->Cantidad }}</td>
+                                <td>{{ $voluntary->Descripcion }}</td>
+                            </tr>
+                        @endforeach
+
                     </table>
 
                 </div>

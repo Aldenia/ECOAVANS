@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class voluntary extends Model
 {
-    /*protected $fillable =[
-        'Id',
+    protected $fillable =[
         'Nombre',
-        'Apellido1',
-        'Apellido2',
+        'Apellido_1',
+        'Apellido_2',
         'Edad',
         'Telefono',
         'Direccion', 
@@ -18,7 +17,7 @@ class voluntary extends Model
         'Cantidad',
         'Descripcion',
         
-    ]; */ 
+    ]; 
     
     protected $table = 'voluntaries';
 }
