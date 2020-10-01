@@ -59,10 +59,12 @@
             <li class="<?php if($page =='welcome'){echo 'active';} ?>"> <a href="{{route('welcome')}}">Inicio</a></li>
             <li class="<?php if($page  == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}">Sobre nosotros</a></li>
             <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}">Actividades</a></li>
-           
+
+            
             <li class="drop-down"><a href="">Formularios</a>
             <ul>
               <li><a href="#">Voluntariado</a></li>
+              
               <li><a href="#">Donaciones</a></li>
             </ul>
           </li>

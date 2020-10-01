@@ -17,6 +17,7 @@ Route::get('/nosotros', 'PrincipalController@nosotros')->name('nosotros');
 Route::get('/actividad', 'PrincipalController@actividad')->name('actividad');
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -55,7 +56,9 @@ Route::get('/crearAsistencia/{CodEvento}','TblasistenciaController@crearAsistenc
 Route::post('/crearAsistencia', 'TblasistenciaController@Crear')->name('asistencia.crearAsist');
 
 //voluntariado
-Route::get('/voluntario', 'PrincipalController@voluntary')->name('voluntary');
+Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
+Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
+Route::post('/create','VoluntaryController@store')->name('voluntary.store');
 
 
 //SI FUNCIONA
