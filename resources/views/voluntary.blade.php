@@ -57,7 +57,7 @@
     </div>
 </div>
 
-    <!-- Vendor JS Files -->
+<!-- Vendor JS Files -->
   <script src="vendor/jquery/jquery.min.js" asp-append-version="true"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
   <script src="vendor/jquery.easing/jquery.easing.min.js" asp-append-version="true"></script>
