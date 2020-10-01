@@ -120,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #67772b;
+  background: #2A8D0F;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .social-links a {
-  color: rgba(189, 187, 74, 0.6);
+  color: rgba(21, 156, 32, 0.87);
   padding-left: 15px;
   display: inline-block;
   line-height: 1px;
@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgb(206, 228, 125);
+  background: rgb(16, 158, 16);
   transition: all 0.5s;
   z-index: 997;
   padding: 25px 0;
@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #c3da5e;
+  background-color: #2A8D0F;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -490,7 +490,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h1 span {
-  color: #106eea;
+  color: #0d9c2c;
 }
 
 #hero h2 {
@@ -511,7 +511,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
-  background: #668827;
+  background: #18ad20;
 }
 
 #hero .btn-get-started:hover {
@@ -530,7 +530,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-watch-video i {
-  color: #106eea;
+  color: #1b9926;
   font-size: 32px;
   position: absolute;
   left: 0;
@@ -539,7 +539,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-watch-video:hover {
-  color: #106eea;
+  color: #1ead25;
 }
 
 #hero .btn-watch-video:hover i {
@@ -600,7 +600,7 @@ section {
   padding: 8px 20px;
   margin: 0;
   background: #e7f1fd;
-  color: #106eea;
+  color: #17a736;
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
@@ -613,7 +613,7 @@ section {
 }
 
 .section-title h3 span {
-  color: #106eea;
+  color: #1a8510;
 }
 
 .section-title p {
@@ -1052,7 +1052,7 @@ section {
 }
 
 .testimonials .owl-dot.active {
-  background-color: #106eea !important;
+  background-color: #26a71a !important;
 }
 
 @media (min-width: 1024px) {
