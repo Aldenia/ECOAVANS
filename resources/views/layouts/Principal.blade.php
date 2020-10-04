@@ -68,7 +68,7 @@
             <li class="<?php if($page  == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}">Sobre nosotros</a></li>
             <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}">Actividades</a></li>
             <li><a href="#portfolio">Galeria</a></li>
-          
+            
 
             <li class="drop-down"><a href="">Formularios</a>
             <ul>
@@ -129,7 +129,10 @@
               <a class="nav-link" data-toggle="dropdown" href="#">  {{ Auth::user()->name }} <i class="fas fa-caret-down"></i></a>
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
               <ul>   
-              <li class="black">            
+              <li class="black">    
+
+
+
               <!--<a href="{{route('Admin.inicio')}}" class="dropdown-item">
                  <i class="fas fa-th-large"></i>    Administración</li></a>
                 </li>
