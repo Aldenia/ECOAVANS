@@ -60,14 +60,18 @@ Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
 Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
 Route::post('/create','VoluntaryController@store')->name('voluntary.store');
 
+//Donaciones
+
+Route::get('/donaciones', 'DonationController@index')->name('donation');
+Route::get('/donaciones/create','DonationController@create')->name('donation.create');
+Route::post('/create','DonationController@store')->name('donation.store');
+
 
 //SI FUNCIONA
 Route::get('hola', function(){
     return view('layout');
 });
 
-Route::resource('/voluntariado','VoluntaryController@index')->names('Voluntary/index');
-Route::resource('/ejemplo', 'ExaVolController');
 
 //Route::post('/', );
 //Route::get('/', funtion(){
