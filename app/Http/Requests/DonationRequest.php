@@ -25,10 +25,10 @@ class DonationRequest extends FormRequest
     {
         return [
             //coment
-            'id'=>'requered',
-            'donorName'=>'requered',
-            'donationType.1'=>'requered', 
-            'incomes_id.2'=>'requered',
+            //'id'=>'requered',
+            'donorName'=>'required',
+            'donationType.1'=>'required', 
+            //'incomes_id.2'=>'requered',
         ];
     }
 }

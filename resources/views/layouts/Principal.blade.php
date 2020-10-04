@@ -74,7 +74,7 @@
             <ul>
 
               <li><a href="{{ route('voluntary.create')}}">Voluntariado</a></li>
-              <li><a href="#">Donaciones</a></li>
+              <li><a href="{{ route('donation.create')}}">Donaciones</a></li>
             </ul>
           </li>
          <!-- <li class="drop-down"><a href="">Drop Down</a>

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Donation;
-use App\Http\Requests\DonationRequest;
 use Illuminate\Http\Request;
+
+use App\Http\Requests\DonationRequest;
 
 class DonationController extends Controller
 {
@@ -15,8 +16,9 @@ class DonationController extends Controller
      */
     public function index()
     {
-        $donation = Donation::orderBy('id', 'DESC')->paginate();
-        return view('donation.index', compact('donation'));
+        $donationC = Donation::all();
+        //dd($voluntaryC);
+        return view('donation')->with('donationN', $donation);
     }
 
     /**
@@ -26,9 +28,11 @@ class DonationController extends Controller
      */
     public function create()
     {
-        return view('donation.create');
+
+        //$voluntary= Voluntary
+        //nombre de la vista
+        return view('Donations.create');
     }
-//Hola
 
     /**
      * Store a newly created resource in storage.
@@ -36,44 +40,43 @@ class DonationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
     public function store(DonationRequest $request)
     {
-        $donation= new Donation();
-        $donation->id= $request->id;
-        $donation->donorName= $request->donorName;
-        $donation->donationType= $request->donationType;
-        $donation->incomes_id= $request->incomes_id;
+        $DonationN= new donation;
+        //$VoluntaryN->Id= $request->id;
+        $DonationN->donorName= $request->donorName;
+        $DonationN->donationType= $request->donationType;
+        $DonationN->incomes_id= $request->incomes_id;
+      
 
-        $donation->save;
-        return redirect()->route('donation.index');
+        $DonationN->save();
+        return redirect()->route('welcome');
     }
+
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Donation  $donation
+     * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-
     public function show(Donation $id)
     {
-        $donation = Donation::find($id); 
-        return view('donation.show',compact('donation'));
+        $DonationB = Donation::find($id); 
+        return view('Donation.show',compact('DonationB'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Donation  $donation
+     * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-
     public function edit(Donation $id)
     {
 
-    $donation = Donation::find($id);
-    return view('donation.edit', compact('donation'));
+    $DonationE = Donation::find($id);
+    return view('Donation.edit', compact('DonationE'));
 
     }
 
@@ -81,31 +84,35 @@ class DonationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Donation  $donation
+     * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-
     public function update(Request $request, Donation $id)
     {
-        $donation= new Donation();
-        $donation->id= $request->id;
-        $donation->donorName= $request->donorName;
-        $donation->donationType= $request->donationType;
-        $donation->incomes_id= $request->incomes_id;
+        $DonationU = DonationU::find($id);
+        $DonationU->id = $request->id;
 
-        $donation->save;
-        return redirect()->route('donation.index');
+        $DonationU->donorName = $request->donorName;
+        $DonationU->donationType = $request->donationType;
+
+        $DonationU->incomes_id = $request->incomes_id;
+        $DonationU->save();
+
+        return redirect()->route('Donations.donation');
     }
+
+
+
+     
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Donation  $donation
+     * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-
     public function destroy(Donation $id)
     {
-        $donation = Donation::find($id); $donation->delete();
+        $DonationE = Donation::find($id); $DonationE->delete();
     }
 }
