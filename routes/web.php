@@ -56,6 +56,7 @@ Route::get('/crearAsistencia/{CodEvento}','TblasistenciaController@crearAsistenc
 Route::post('/crearAsistencia', 'TblasistenciaController@Crear')->name('asistencia.crearAsist');
 
 //voluntariado
+//Route::resource('/hasteamigo', 'amigoReq')->name('');
 Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
 Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
 Route::post('/voluntario/create','VoluntaryController@store')->name('voluntary.store');
