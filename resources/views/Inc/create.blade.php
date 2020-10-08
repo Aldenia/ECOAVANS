@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Create Donation')
+@section('title','Create Ingreso')
 @section('content')
 
  <!-- Vendor CSS Files -->
@@ -22,28 +22,26 @@
 
               <div class="row mt-5">
                 <div class="col-sm-8 offset-sm-2">
-                  <form action="{{route('donation.store')}}" method = "post">
+                  <form action="{{route('income.store')}}" method = "post">
                     @csrf
-
                     <div class="form-group">
-                      <label for="donorName">Nombre donador:</label>
-                      <input type="text" name = "donorName" id = "donorName" class="form-control" required>
+                      <label for="quantity">Cantidad:</label>
+                      <input type="text" name = "quantity" id = "quantity" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="description"> Descripcion:</label>
+                      <input type="text" name = "description" id = "description" class="form-control" required>
                     </div>
 
                     <div class="form-group">
-                      <label for="donationType">Tipo de donación:</label>
-                      <input type="text" name = "donationType" id = "donationType" class="form-control" required>
+                      <label for="incomeDate"> Fecha de ingreso:</label>
+                      <input type="date" name = "incomeDate" id = "incomeDate" class="form-control" required>
                     </div>
-{{-- 
-                    <div class="form-group">
-                      <label for="incomes_id">Id Ingreso:</label>
-                      <input type="text" name = "incomes_id" id = "incomes_id" class="form-control" required>
-                    </div> --}}
-                   
-                   
+                    
+                  
 
 
-                    <button type = "submit" class = "btn btn-success">Guardar</button>
+                    <button type = "submit" class = "btn btn-success">Submit</button>
                   </form>
                 </div>
               </div>

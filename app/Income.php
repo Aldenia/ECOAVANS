@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Income extends Model
 {
-    protected $fillable = ['id', 'description', 'quantity', 'incomeData'];
+    protected $fillable = ['id', 'description', 'quantity', 'incomeDate'];
 
     public function Donation()
     {

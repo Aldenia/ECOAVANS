@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Income;
-use App\Http\Requests\IncomeRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\IncomeRequest;
+
 
 class IncomeController extends Controller
 {
@@ -15,8 +16,10 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        $income = Income::orderBy('id', 'DESC')->paginate();
-        return view('income.index', compact('income'));
+        $incomeC = Income::all();
+        //dd($voluntaryC);
+        return view('income')->with('incomeN', $income);
+    
     }
 
     /**
@@ -26,7 +29,7 @@ class IncomeController extends Controller
      */
     public function create()
     {
-        return view('income.create');
+        return view('Inc.create');
     }
 
     /**
@@ -38,14 +41,14 @@ class IncomeController extends Controller
 
     public function store(IncomeRequest $request)
     {
-        $income= new Income();
-        $income->id= $request->id;
-        $income->description= $request->description;
-        $income->quantity= $request->quantity;
-        $income->incomeData= $request->incomeData;
+        $IncomeN= new Income();
+        //$income->id= $request->id;
+        $IncomeN->description= $request->description;
+        $IncomeN->quantity= $request->quantity;
+        $IncomeN->incomeDate= $request->incomeDate;
 
-        $income->save;
-        return redirect()->route('donation.index');
+        $IncomeN->save;
+        return redirect()->route('welcome');
     }
 
     /**
@@ -57,8 +60,8 @@ class IncomeController extends Controller
 
     public function show(Income $id)
     {
-        $income = Income::find($id); 
-        return view('income.show',compact('income'));
+        $IncomeB = Income::find($id); 
+        return view('Income.show',compact('IncomeB'));
     }
 
     /**
@@ -71,8 +74,8 @@ class IncomeController extends Controller
     public function edit(Income $id)
     {
 
-    $income = Income::find($id);
-    return view('income.edit', compact('income'));
+    $IncomeE = Income::find($id);
+    return view('Income.edit', compact('IncomeE'));
 
     }
 
@@ -86,14 +89,14 @@ class IncomeController extends Controller
 
     public function update(Request $request, Income $id)
     {
-        $income= new Income();
-        $income->id= $request->id;
-        $income->description= $request->description;
-        $income->quantity= $request->quantity;
-        $income->incomeData= $request->incomeData;
+        $IncomeU= Income::find($id);
+        $IncomeU->id= $request->id;
+        $IncomeU->description= $request->description;
+        $IncomeU->quantity= $request->quantity;
+        $IncomeU->incomeDate= $request->incomeDate;
 
-        $income->save;
-        return redirect()->route('donation.index');
+        $IncomeU->save;
+        return redirect()->route('Income.index');
     }
 
     /**
@@ -105,7 +108,7 @@ class IncomeController extends Controller
 
     public function destroy(Income $id)
     {
-        $income = Income::find($id); $income->delete();
+        $incomeE = Income::find($id); $IncomeE->delete();
     }
 
 

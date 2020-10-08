@@ -70,6 +70,11 @@
             <li><a href="#portfolio">Galeria</a></li>
             
 
+
+            <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
+
+
+
             <li class="drop-down"><a href="">Formularios</a>
             <ul>
 
