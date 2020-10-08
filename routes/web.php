@@ -58,13 +58,22 @@ Route::post('/crearAsistencia', 'TblasistenciaController@Crear')->name('asistenc
 //voluntariado
 Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
 Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
-Route::post('/create','VoluntaryController@store')->name('voluntary.store');
+Route::post('/voluntario/create','VoluntaryController@store')->name('voluntary.store');
+Route::get('/amigoReq', 'PrincipalController@amigoReq')->name('amigoReq');
 
 //Donaciones
 
 Route::get('/donaciones', 'DonationController@index')->name('donation');
 Route::get('/donaciones/create','DonationController@create')->name('donation.create');
-Route::post('/create','DonationController@store')->name('donation.store');
+Route::post('/donaciones/create','DonationController@store')->name('donation.store');
+
+
+//Income
+Route::get('/ingresos', 'IncomeController@index')->name('income');
+Route::get('/ingresos/create','IncomeController@create')->name('income.create');
+Route::post('/ingresos/create','IncomeController@store')->name('income.store');
+
+
 
 
 //SI FUNCIONA

@@ -17,7 +17,7 @@ class CreateIncomeTable extends Migration
             $table->bigIncrements('id');
             $table->string('description');
             $table->string('quantity');
-            $table->dateTime('incomeDate');
+            $table->date('incomeDate');
             $table->timestamps();
         });
 
