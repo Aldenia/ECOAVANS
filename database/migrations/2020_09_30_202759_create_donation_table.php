@@ -15,12 +15,16 @@ class CreateDonationTable extends Migration
     {
         Schema::create('donation', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('donorName');
+            $table->string('name');
+            $table->string('lastName');
             $table->string('donationType');
-            $table->bigInteger('incomes_id')->unsigned()->index();
+            $table->integer('quantity');
+            $table->string('description');
+            $table->date('currentDate');
+            $table->string('phone');
+            $table->string('mail');
 
-            $table->foreign("incomes_id")->references("id")->on("income")->onDelete("cascade")->onUpdate("cascade");
-            $table->timestamps();
+             $table->timestamps();
 
 
         });

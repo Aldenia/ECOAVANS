@@ -51,7 +51,7 @@ class VoluntaryController extends Controller
         $VoluntaryN->Telefono= $request->Telefono;
         $VoluntaryN->Direccion= $request->Direccion;
         $VoluntaryN->Email= $request->Email;
-        $VoluntaryN->Cantidad= $request->Cantidad;
+        $VoluntaryN->Cantidad= $request->Cantidad ?$request->Cantidad :null;
         $VoluntaryN->Descripcion= $request->Descripcion;
 
         $VoluntaryN->save();
@@ -102,6 +102,7 @@ class VoluntaryController extends Controller
         $VoluntaryU->direccion = $request->direccion;
         $VoluntaryU->email = $request->email;
         $VoluntaryU->descriocion = $request->descripcion;
+        
         $VoluntaryU->save();
         return redirect()->route('Voluntary.index');
     }

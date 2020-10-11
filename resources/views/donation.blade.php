@@ -22,19 +22,30 @@
                         <thead>
                             <tr> 
                                 <th width="20px">ID</th> 
-                                <th >Nombre del donador</th> 
-                                <th >Tipo de donacion</th> 
-                                <th >Id ingresos</th>
+
+                                <th >Nombre donador</th>
+                                <th >Apellidos</th>
+                                <th >Tipo de donacion</th>
+                                <th >Cantidad</th>
+                                <th >Descripcion</th>
+                                <th >Fecha</th>
+                                <th >Telefono</th>
+                                <th >Correo</th>
                                 <th colspan="3">&nbsp;</th> 
                             </tr>
                         </thead>
                     
              @foreach ($donationN as $donation)
-            <tr>
+             <tr class = "text-center">
                 <td>{{$donation->id}}</td>
-                <td>{{$donation->donorName}}</td>
+                <td>{{$donation->name}}</td>
+                <td>{{$donation->lastName}}</td>
                 <td>{{$donation->donationType}}</td>
-                <td>{{$donation->incomes_id}}</td>
+                <td>{{$donation->quantity}}</td>
+                <td>{{$donation->description}}</td>
+                <td>{{$donation->currentDate}}</td>
+                <td>{{$donation->phone}}</td>
+                <td>{{$donation->mail}}</td>
 
                 </tr>
                 @endforeach

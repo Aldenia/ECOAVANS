@@ -18,7 +18,7 @@ class DonationController extends Controller
     {
         $donationC = Donation::all();
         //dd($voluntaryC);
-        return view('donation')->with('donationN', $donation);
+        return view('donation')->with('donationN', $donationC);
     }
 
     /**
@@ -44,10 +44,14 @@ class DonationController extends Controller
     {
         $DonationN= new donation;
         //$VoluntaryN->Id= $request->id;
-        $DonationN->donorName= $request->donorName;
+        $DonationN->name= $request->name;
+        $DonationN->lastName= $request->lastName;
         $DonationN->donationType= $request->donationType;
-        $DonationN->incomes_id= $request->incomes_id;
-      
+        $DonationN->quantity= $request->quantity;
+        $DonationN->description= $request->description;
+        $DonationN->currentDate= $request->currentDate;
+        $DonationN->phone= $request->phone;
+        $DonationN->mail= $request->mail;
 
         $DonationN->save();
         return redirect()->route('welcome');
@@ -64,6 +68,7 @@ class DonationController extends Controller
     {
         $DonationB = Donation::find($id); 
         return view('Donation.show',compact('DonationB'));
+        //Donation
     }
 
     /**
@@ -89,21 +94,21 @@ class DonationController extends Controller
      */
     public function update(Request $request, Donation $id)
     {
-        $DonationU = DonationU::find($id);
-        $DonationU->id = $request->id;
+        $DonationU = Donation::find($id);
+        $DonationU->id= $request->id;
+        $DonationU->name= $request->name;
+        $DonationU->lastName= $request->lastName;
+        $DonationU->donationType= $request->donationType;
+        $DonationU->quantity= $request->quantity;
+        $DonationU->description= $request->description;
+        $DonationU->currentDate= $request->currentDate;
+        $DonationU->phone= $request->phone;
+        $DonationU->mail= $request->mail;
 
-        $DonationU->donorName = $request->donorName;
-        $DonationU->donationType = $request->donationType;
-
-        $DonationU->incomes_id = $request->incomes_id;
         $DonationU->save();
 
         return redirect()->route('Donations.donation');
     }
-
-
-
-     
 
     /**
      * Remove the specified resource from storage.

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Donation;
+use App\Reservation;
 use Illuminate\Http\Request;
 
-use App\Http\Requests\DonationRequest;
+use App\Http\Requests\ReservationRequest;
 
-class DonationController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class DonationController extends Controller
      */
     public function index()
     {
-        $donationC = Donation::all();
+        $reservationC = Reservation::all();
         //dd($voluntaryC);
-        return view('donation')->with('donationN', $donation);
+        return view('reservation')->with('reservationN', $reservation);
     }
 
     /**
@@ -29,27 +29,26 @@ class DonationController extends Controller
     public function create()
     {
 
-        //$voluntary= Voluntary
-        //nombre de la vista
-        return view('Donations.create');
+        
+        return view('Reservations.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(DonationRequest $request)
+   
+    public function store(ReservationRequest $request)
     {
-        $DonationN= new donation;
-        //$VoluntaryN->Id= $request->id;
-        $DonationN->donorName= $request->donorName;
-        $DonationN->donationType= $request->donationType;
-        $DonationN->incomes_id= $request->incomes_id;
-      
+        $ReservationN= new donation;
+        //$ReservationN->Id= $request->id;
+        $ReservationN->reservationDate= $request->reservationDate;
+        $ReservationN->reservationHour= $request->reservationHour;
+        $ReservationN->adultQuantity= $request->adultQuantity;
+        $ReservationN->childrenQuantity= $request->childrenQuantity;
+        $ReservationN->tourType= $request->tourType;
+        $ReservationN->tourPrice= $request->tourPrice;
+        $ReservationN->user_id= $request->user_id;
 
-        $DonationN->save();
+
+
+        $ReservationN->save();
         return redirect()->route('welcome');
     }
 
