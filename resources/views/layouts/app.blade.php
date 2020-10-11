@@ -21,8 +21,7 @@
     <link href="vendor/venobox/venobox.css" rel="stylesheet">
     <link href="vendor/aos/aos.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="css/style.css" rel="stylesheet">
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
