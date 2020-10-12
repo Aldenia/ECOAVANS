@@ -6,6 +6,8 @@ use App\Donation;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\DonationRequest;
+use App\Http\Requests\DonationRequest;
+use Illuminate\Http\Request;
 
 class DonationController extends Controller
 {
@@ -19,6 +21,9 @@ class DonationController extends Controller
         $donationC = Donation::all();
         //dd($voluntaryC);
         return view('donation')->with('donationN', $donationC);
+        $donation = Donation::orderBy('id', 'DESC')->paginate();
+        return view('donation.index', compact('donation'));
+
     }
 
     /**
@@ -33,6 +38,9 @@ class DonationController extends Controller
         //nombre de la vista
         return view('Donations.create');
     }
+        return view('donation.create');
+    }
+//Hola
 
     /**
      * Store a newly created resource in storage.
@@ -69,6 +77,30 @@ class DonationController extends Controller
         $DonationB = Donation::find($id); 
         return view('Donation.show',compact('DonationB'));
         //Donation
+
+    public function store(DonationRequest $request)
+    {
+        $donation= new Donation();
+        $donation->id= $request->id;
+        $donation->donorName= $request->donorName;
+        $donation->donationType= $request->donationType;
+        $donation->incomes_id= $request->incomes_id;
+
+        $donation->save;
+        return redirect()->route('donation.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Donation  $donation
+     * @return \Illuminate\Http\Response
+     */
+
+    public function show(Donation $id)
+    {
+        $donation = Donation::find($id); 
+        return view('donation.show',compact('donation'));
     }
 
     /**
@@ -83,12 +115,24 @@ class DonationController extends Controller
     $DonationE = Donation::find($id);
     return view('Donation.edit', compact('DonationE'));
 
+     * @param  \App\Donation  $donation
+     * @return \Illuminate\Http\Response
+     */
+
+    public function edit(Donation $id)
+    {
+
+    $donation = Donation::find($id);
+    return view('donation.edit', compact('donation'));
+
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
@@ -108,6 +152,22 @@ class DonationController extends Controller
         $DonationU->save();
 
         return redirect()->route('Donations.donation');
+
+     * @param  \App\Donation  $donation
+     * @return \Illuminate\Http\Response
+     */
+
+    public function update(Request $request, Donation $id)
+    {
+        $donation= new Donation();
+        $donation->id= $request->id;
+        $donation->donorName= $request->donorName;
+        $donation->donationType= $request->donationType;
+        $donation->incomes_id= $request->incomes_id;
+
+        $donation->save;
+        return redirect()->route('donation.index');
+
     }
 
     /**
@@ -119,5 +179,14 @@ class DonationController extends Controller
     public function destroy(Donation $id)
     {
         $DonationE = Donation::find($id); $DonationE->delete();
+    }
+}
+     * @param  \App\Donation  $donation
+     * @return \Illuminate\Http\Response
+     */
+
+    public function destroy(Donation $id)
+    {
+        $donation = Donation::find($id); $donation->delete();
     }
 }
