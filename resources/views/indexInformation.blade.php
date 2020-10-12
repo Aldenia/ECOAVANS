@@ -90,7 +90,6 @@
           </li>
           <li><a href="#contact">Contactos</a></li>
 
-
           <li>
           @if (Route::has('login'))
                 <div class="top-right links">

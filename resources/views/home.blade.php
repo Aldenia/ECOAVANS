@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.Principal')
 
 @section('content')
+
+<?php $page='home';?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -13,7 +15,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                ({{('Ha iniciado sesión')}}
+                {{('Ha iniciado sesión')}}
                 </div>
             </div>
         </div>

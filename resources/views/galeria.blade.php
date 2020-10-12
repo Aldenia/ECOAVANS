@@ -1,5 +1,8 @@
-@extends('layouts.Principal')
-  @section('content')
+@extends('layouts.app')
+@section('content')
+
+<?php $page='galeria';?>
+  <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -114,4 +117,5 @@
         </div>
 
       </div>
-  @endsection
+  </section>
+@endsection

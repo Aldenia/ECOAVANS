@@ -16,11 +16,13 @@ class CreateVoluntariesTable extends Migration
         Schema::create('voluntaries', function (Blueprint $table) {
             $table->bigIncrements('id', 20)->unique();
             $table->string('Nombre');
-            $table->string('Apellido 1');
-            $table->string('Apellido 2');
+            $table->string('Apellido_1');
+            $table->string('Apellido_2');
+            $table->integer('Edad');
             $table->string('Telefono');
             $table->string('Direccion');
             $table->string('Email');
+            $table->integer('Cantidad');
             $table->string('Descripcion');
             $table->timestamps();
         });

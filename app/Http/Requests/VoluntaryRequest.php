@@ -24,14 +24,16 @@ class VoluntaryRequest extends FormRequest
     public function rules()
     {
         return [
-            'Id'=>'requered',
-            'Nombre'=>'requered',
-            'Apellido.1'=>'requered', 
-            'Apellido.2'=>'requered',
-            'Telefono'=>'requered',
-            'Direccion'=>'requered',
-            'Email'=>'requered',
-            'Descripcion'=>'requered'
+            //'Id'=>'required',
+            'Nombre'=>'required',
+            'Apellido_1'=>'required', 
+            'Apellido_2'=>'required',
+            'Edad'=>'required',
+            'Telefono'=>'required',
+            'Direccion'=>'required',
+            'Email'=>'required',
+            'Cantidad'=>'required',
+            'Descripcion'=>'required'
         ];
     }
 }

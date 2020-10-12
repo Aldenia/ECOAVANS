@@ -15,8 +15,9 @@ class VoluntaryController extends Controller
      */
     public function index()
     {
-        $voluntary = voluntary::orderBy('id', 'DESC')->paginate();
-        return view('voluntary.index', compact('voluntary'));
+        $voluntaryC = Voluntary::all();
+        //dd($voluntaryC);
+        return view('voluntary')->with('voluntaryN', $voluntaryC);
     }
 
     /**
@@ -26,7 +27,10 @@ class VoluntaryController extends Controller
      */
     public function create()
     {
-        return view('Voluntary.create');
+
+        //$voluntary= Voluntary
+        
+        return view('Volun.create');
     }
 
     /**
@@ -37,18 +41,20 @@ class VoluntaryController extends Controller
      */
     public function store(VoluntaryRequest $request)
     {
-        $VoluntaryN= new Voluntary;
-        $VoluntaryN->id= $request->id;
-        $VoluntaryN->nombre= $request->nombre;
-        $VoluntaryN->apellido1= $request->apellido1;
-        $VoluntaryN->apellido2= $request->apellido2;
-        $VoluntaryN->telefono= $request->id;
-        $VoluntaryN->direccion= $request->direccion;
-        $VoluntaryN->email= $request->email;
-        $VoluntaryN->descripcion= $request->descripcion;
+        $VoluntaryN= new voluntary;
+        //$VoluntaryN->Id= $request->id;
+        $VoluntaryN->Nombre= $request->Nombre;
+        $VoluntaryN->Apellido_1= $request->Apellido_1;
+        $VoluntaryN->Apellido_2= $request->Apellido_2;
+        $VoluntaryN->Edad= $request->Edad;
+        $VoluntaryN->Telefono= $request->Telefono;
+        $VoluntaryN->Direccion= $request->Direccion;
+        $VoluntaryN->Email= $request->Email;
+        $VoluntaryN->Cantidad= $request->Cantidad ?$request->Cantidad :null;
+        $VoluntaryN->Descripcion= $request->Descripcion;
 
-        $VoluntaryN->save;
-        return redirect()->route('Voluntary.index');
+        $VoluntaryN->save();
+        return redirect()->route('welcome');
     }
 
     /**
@@ -89,12 +95,13 @@ class VoluntaryController extends Controller
         $VoluntaryU = Voluntary::find($id);
         $VoluntaryU->id = $request->id;
         $VoluntaryU->nombre = $request->nombre;
-        $VoluntaryU->apellido = $request->apellido1;
-        $VoluntaryU->apellido = $request->apellido2;
-        $VoluntaryU->apellido = $request->telefono;
-        $VoluntaryU->apellido = $request->direccion;
-        $VoluntaryU->apellido = $request->email;
-        $VoluntaryU->apellido = $request->descripcion;
+        $VoluntaryU->apellido1 = $request->apellido1;
+        $VoluntaryU->apellido2 = $request->apellido2;
+        $VoluntaryU->telefono = $request->telefono;
+        $VoluntaryU->direccion = $request->direccion;
+        $VoluntaryU->email = $request->email;
+        $VoluntaryU->descriocion = $request->descripcion;
+        
         $VoluntaryU->save();
         return redirect()->route('Voluntary.index');
     }
