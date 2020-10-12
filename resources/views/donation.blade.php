@@ -10,43 +10,45 @@
 
     <!-- Template Main CSS File -->
     <link href="css/style.css" rel="stylesheet">
-<?php $page='voluntary';?>
+<?php $page='donation';?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Voluntariado</div>
+                <div class="card-header">Donaciones</div>
 
                 <div class="card-body">
                     <table class="table table-hover table-striped">
                         <thead>
-                            <tr>
-                                <th width="20px">ID</th>
-                                <th >Nombre</th>
-                                <th >Apellido</th>
-                                <th >Edad</th>
-                                <th >Teléfono</th>
-                                <th >Dirección</th>
-                                <th >Email</th>
+                            <tr> 
+                                <th width="20px">ID</th> 
+
+                                <th >Nombre donador</th>
+                                <th >Apellidos</th>
+                                <th >Tipo de donacion</th>
                                 <th >Cantidad</th>
-                                <th >Descripción</th>
-                                <th colspan="3">&nbsp;</th>
+                                <th >Descripcion</th>
+                                <th >Fecha</th>
+                                <th >Telefono</th>
+                                <th >Correo</th>
+                                <th colspan="3">&nbsp;</th> 
                             </tr>
                         </thead>
                     
-                        @foreach($voluntaryN as $voluntary)
-                            <tr class = "text-center">
-                                <td>{{ $voluntary->id }}</td>
-                                <td>{{ $voluntary->Nombre }}</td>
-                                <td>{{ $voluntary-> Apellido_1 }}&nbsp;{{ $voluntary-> Apellido_2 }}</td>
-                                <td>{{ $voluntary->Edad }}</td>
-                                <td>{{ $voluntary->Telefono }}</td>
-                                <td>{{ $voluntary->Direccion }}</td>
-                                <td>{{ $voluntary->Email }}</td>
-                                <td>{{ $voluntary->Cantidad }}</td>
-                                <td>{{ $voluntary->Descripcion }}</td>
-                            </tr>
-                        @endforeach
+             @foreach ($donationN as $donation)
+             <tr class = "text-center">
+                <td>{{$donation->id}}</td>
+                <td>{{$donation->name}}</td>
+                <td>{{$donation->lastName}}</td>
+                <td>{{$donation->donationType}}</td>
+                <td>{{$donation->quantity}}</td>
+                <td>{{$donation->description}}</td>
+                <td>{{$donation->currentDate}}</td>
+                <td>{{$donation->phone}}</td>
+                <td>{{$donation->mail}}</td>
+
+                </tr>
+                @endforeach
 
                     </table>
 

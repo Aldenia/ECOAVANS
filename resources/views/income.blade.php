@@ -10,42 +10,33 @@
 
     <!-- Template Main CSS File -->
     <link href="css/style.css" rel="stylesheet">
-<?php $page='voluntary';?>
+<?php $page='income';?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Voluntariado</div>
+                <div class="card-header">Ingresos Ecomuseo</div>
 
                 <div class="card-body">
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr>
                                 <th width="20px">ID</th>
-                                <th >Nombre</th>
-                                <th >Apellido</th>
-                                <th >Edad</th>
-                                <th >Teléfono</th>
-                                <th >Dirección</th>
-                                <th >Email</th>
+                                <th >Descripcion</th>
                                 <th >Cantidad</th>
-                                <th >Descripción</th>
+                                <th >Fecha</th>
+                                
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                     
-                        @foreach($voluntaryN as $voluntary)
+                        @foreach($IncomeN as $income)
                             <tr class = "text-center">
-                                <td>{{ $voluntary->id }}</td>
-                                <td>{{ $voluntary->Nombre }}</td>
-                                <td>{{ $voluntary-> Apellido_1 }}&nbsp;{{ $voluntary-> Apellido_2 }}</td>
-                                <td>{{ $voluntary->Edad }}</td>
-                                <td>{{ $voluntary->Telefono }}</td>
-                                <td>{{ $voluntary->Direccion }}</td>
-                                <td>{{ $voluntary->Email }}</td>
-                                <td>{{ $voluntary->Cantidad }}</td>
-                                <td>{{ $voluntary->Descripcion }}</td>
-                            </tr>
+                                <td>{{ $income->id }}</td>
+                                <td>{{ $income->description }}</td>
+                                <td>{{ $income->quantity }}</td>
+                                <td>{{ $income->incomeDate }}</td>
+                                
                         @endforeach
 
                     </table>

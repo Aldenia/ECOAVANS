@@ -24,6 +24,21 @@ class DonationRequest extends FormRequest
     public function rules()
     {
         return [
+            
+            //'id'=>'requered',
+            'name'=>'required',
+            'lastName'=>'required',
+            'donationType'=>'required',
+            'quantity'=>'required',
+            'description'=>'required',
+            'currentDate'=>'required',
+            'phone'=>'required', 
+            //'mail'=>'email'
+            
+        ];
+    }
+}
+
             //coment
             'id'=>'requered',
             'donorName'=>'requered',

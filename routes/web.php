@@ -7,10 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-
-
 Route::get('/', 'PrincipalController@welcome');
-//Route::get('/about','PrincipalController@about' );
 
 Route::get('/welcome','PrincipalController@welcome')->name('welcome');
 Route::get('/nosotros', 'PrincipalController@nosotros')->name('nosotros');
@@ -56,9 +53,27 @@ Route::get('/crearAsistencia/{CodEvento}','TblasistenciaController@crearAsistenc
 Route::post('/crearAsistencia', 'TblasistenciaController@Crear')->name('asistencia.crearAsist');
 
 //voluntariado
+Route::get('/amigoReq', 'PrincipalController@amigoReq')->name('amigoReq');
+
 Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
 Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
-Route::post('/create','VoluntaryController@store')->name('voluntary.store');
+Route::post('/voluntario/create','VoluntaryController@store')->name('voluntary.store');
+
+
+//Donaciones
+Route::get('/realizarDonaciones', 'PrincipalController@realizarDonaciones')->name('realizarDonaciones');
+
+Route::get('/donaciones', 'DonationController@index')->name('donation');
+Route::get('/donaciones/create','DonationController@create')->name('donation.create');
+Route::post('/donaciones/create','DonationController@store')->name('donation.store');
+
+
+//Income
+Route::get('/ingresos', 'IncomeController@index')->name('income');
+Route::get('/ingresos/create','IncomeController@create')->name('income.create');
+Route::post('/ingresos/create','IncomeController@store')->name('income.store');
+
+
 
 
 //SI FUNCIONA
@@ -66,15 +81,10 @@ Route::get('hola', function(){
     return view('layout');
 });
 
-Route::resource('/voluntariado','VoluntaryController@index')->names('Voluntary/index');
-Route::resource('/ejemplo', 'ExaVolController');
 
-//Route::post('/', );
-//Route::get('/', funtion(){
-  //  return view('layout');
-//});
 Route::resource('/galeria','InformationController');
 Route::resource('/crear','InformationController@create');
+
 // Rutas CRUD
  
 /* Crear */
@@ -101,5 +111,4 @@ Route::get('admin/information/details/{id}', ['as' => 'admin/information/details
 
 route::view('/app', 'layouts.app');
 
-//Route::resource ('/voluntariado', 'Voluntary.index');
 
