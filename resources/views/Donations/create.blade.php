@@ -24,6 +24,7 @@
                 <div class="col-sm-8 offset-sm-2">
                   <form action="{{route('donation.store')}}" method = "post">
                     @csrf
+                    <h2 style="color: rgb(3, 255, 138)" align="center">Agregar Donacion: </h2>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
@@ -104,17 +105,7 @@
                         </div>
                     </div>
 
-                    
 
-
-                    
-
-
-                    
-
-                 
-
-                   
                     <button type = "submit" class = "btn btn-success">Guardar</button>
                   </form>
                 </div>
