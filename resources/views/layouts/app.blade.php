@@ -21,7 +21,9 @@
     <link href="vendor/venobox/venobox.css" rel="stylesheet">
     <link href="vendor/aos/aos.css" rel="stylesheet">
 
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -85,6 +87,7 @@
         </nav>
 
         <main class="py-4">
+        @include('partial.alerts')
             @yield('content')
         </main>
     </div>

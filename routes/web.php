@@ -58,7 +58,13 @@ Route::get('/amigoReq', 'PrincipalController@amigoReq')->name('amigoReq');
 Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
 Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
 Route::post('/voluntario/create','VoluntaryController@store')->name('voluntary.store');
+Route::get('/voluntario/edit','VoluntaryController@edit')->name('voluntary.edit');
+Route::patch('voluntario/{$id}','VoluntaryController@update')->name('voluntary.update');
+Route::get('/voluntario/show','VoluntaryController@show')->name('voluntary.show');
+Route::delete('/voluntario/delete','VoluntaryController@destroy')->name('volutary.destroy');
 
+
+Route::resource('/voluntario1', 'VoluntaryController');
 
 //Donaciones
 Route::get('/realizarDonaciones', 'PrincipalController@realizarDonaciones')->name('realizarDonaciones');

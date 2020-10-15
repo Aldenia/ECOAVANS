@@ -15,9 +15,16 @@ class VoluntaryController extends Controller
      */
     public function index()
     {
+        //if(Auth::user()-> id == $id){
+          //  return redirect()->route('/');
+        //}
         $voluntaryC = Voluntary::all();
         //dd($voluntaryC);
         return view('voluntary')->with('voluntaryN', $voluntaryC);
+        
+        //$data['voluntary'] = Voluntary::orderBy('id','desc')->paginate(8);
+   
+        //return view('voluntary', $data)->with('voluntaryN', $voluntary);
     }
 
     /**
@@ -27,9 +34,6 @@ class VoluntaryController extends Controller
      */
     public function create()
     {
-
-        //$voluntary= Voluntary
-        
         return view('Volun.create');
     }
 
@@ -54,42 +58,31 @@ class VoluntaryController extends Controller
         $VoluntaryN->Descripcion= $request->Descripcion;
 
         $VoluntaryN->save();
-        return redirect()->route('welcome');
+        return redirect()->route('amigoReq')
+                        ->with('success', 'Se ha registrado un nuevo usuario');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Voluntary $id)
     {
-        $VoluntaryB = Voluntary::find($id); 
-        return view('Voluntary.show',compact('VoluntaryB'));
+        $voluntaryB = Voluntary::find($id); 
+        return view('volun.show',compact('voluntaryB'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Voluntary $id)
+
+    public function edit($id)
     {
 
-    $VoluntaryE = Voluntary::find($id);
-    return view('Voluntary.edit', compact('VoluntaryE'));
+    $voluntary = Voluntary::find($id);
+
+    if(is_null($voluntary)){
+        return redirect()->route('voluntary.index');
+    }
+    return view('Volun.create')-> with('volun', $voluntary);
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Voluntary $id)
     {
         $VoluntaryU = Voluntary::find($id);
@@ -103,7 +96,7 @@ class VoluntaryController extends Controller
         $VoluntaryU->descriocion = $request->descripcion;
         
         $VoluntaryU->save();
-        return redirect()->route('Voluntary.index');
+        return redirect()->route('voluntary.index');
     }
 
     /**
@@ -115,5 +108,7 @@ class VoluntaryController extends Controller
     public function destroy(Voluntary $id)
     {
         $VoluntaryE = Voluntary::find($id); $VoluntaryE->delete();
+        return Response::json($VoluntaryE);
     }
+
 }
