@@ -25,6 +25,12 @@ class CreateDonationTable extends Migration
             $table->string('mail');
 
              $table->timestamps();
+            $table->string('donorName');
+            $table->string('donationType');
+            $table->bigInteger('incomes_id')->unsigned()->index();
+
+            $table->foreign("incomes_id")->references("id")->on("income")->onDelete("cascade")->onUpdate("cascade");
+            $table->timestamps();
 
 
         });
