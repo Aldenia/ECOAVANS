@@ -8,6 +8,9 @@ class Income extends Model
 {
     protected $fillable = ['id', 'description', 'quantity', 'incomeDate'];
 
+    protected $fillable = ['id', 'description', 'quantity', 'incomeData'];
+
+
     public function Donation()
     {
         return $this->hasMany('App\Donation');
