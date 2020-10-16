@@ -54,11 +54,10 @@ class ReservationController extends Controller
         return redirect()->route('welcome');
     }
 
-    // comentario
+    //
 
     /**
      * Display the specified resource.
-     * 
      *
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
