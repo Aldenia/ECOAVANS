@@ -25,10 +25,3 @@ class Donation extends Model
 
     protected $table = 'donation';
 }
-    protected $fillable = ['id', 'donorName', 'donationType', 'incomes_id'];
-
-    public function Income()
-    {
-     return $this->belongsTo('App\Income');
-    }
-}
