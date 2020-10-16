@@ -54,7 +54,7 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">¿Cómo ser parte de nuestros servicios de voluntariado en Ecomuseo de Abangares?</h5>
+                                    <h5 class="card-title">¿Cómo realizar donaciones a Ecomuseo de Abangares? Debes seguir los siguientes pasos...</h5>
                                     <p class="card-text">...........</p>
                                 </div>
                             </div>

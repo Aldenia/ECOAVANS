@@ -39,11 +39,3 @@ class DonationRequest extends FormRequest
     }
 }
 
-            //coment
-            'id'=>'requered',
-            'donorName'=>'requered',
-            'donationType.1'=>'requered', 
-            'incomes_id.2'=>'requered',
-        ];
-    }
-}

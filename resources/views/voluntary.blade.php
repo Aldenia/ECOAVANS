@@ -30,6 +30,7 @@
                                 <th >Email</th>
                                 <th >Cantidad</th>
                                 <th >Descripción</th>
+                                <th width="280">Herramientas</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -45,6 +46,17 @@
                                 <td>{{ $voluntary->Email }}</td>
                                 <td>{{ $voluntary->Cantidad }}</td>
                                 <td>{{ $voluntary->Descripcion }}</td>
+                                <td>
+                                    <a href="#" 
+                                    class="btn btn-info btn-sm">Detalle</a>
+                                  </td>
+  
+                                  <td> 
+                                    <a href="#"
+                                    class="btn btn-warning btn-sm">Editar</a>
+                                  </td>
+                                  
+                                  <td>&nbsp;</td>
                             </tr>
                         @endforeach
 
