@@ -57,7 +57,7 @@ class DonationController extends Controller
         return redirect()->route('realizarDonaciones')->with('success', 'Se ha registrado una nueva donación, gracias');
     }
 
-
+    //hola es un comentario
     /**
      * Display the specified resource.
      *
