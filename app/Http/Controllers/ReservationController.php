@@ -58,6 +58,7 @@ class ReservationController extends Controller
 
     /**
      * Display the specified resource.
+     * 
      *
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
