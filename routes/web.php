@@ -7,10 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-
-
 Route::get('/', 'PrincipalController@welcome');
-//Route::get('/about','PrincipalController@about' );
 
 Route::get('/welcome','PrincipalController@welcome')->name('welcome');
 Route::get('/nosotros', 'PrincipalController@nosotros')->name('nosotros');
@@ -56,13 +53,15 @@ Route::get('/crearAsistencia/{CodEvento}','TblasistenciaController@crearAsistenc
 Route::post('/crearAsistencia', 'TblasistenciaController@Crear')->name('asistencia.crearAsist');
 
 //voluntariado
-//Route::resource('/hasteamigo', 'amigoReq')->name('');
+Route::get('/amigoReq', 'PrincipalController@amigoReq')->name('amigoReq');
+
 Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
 Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
 Route::post('/voluntario/create','VoluntaryController@store')->name('voluntary.store');
-Route::get('/amigoReq', 'PrincipalController@amigoReq')->name('amigoReq');
+
 
 //Donaciones
+Route::get('/realizarDonaciones', 'PrincipalController@realizarDonaciones')->name('realizarDonaciones');
 
 Route::get('/donaciones', 'DonationController@index')->name('donation');
 Route::get('/donaciones/create','DonationController@create')->name('donation.create');
@@ -74,6 +73,13 @@ Route::get('/ingresos', 'IncomeController@index')->name('income');
 Route::get('/ingresos/create','IncomeController@create')->name('income.create');
 Route::post('/ingresos/create','IncomeController@store')->name('income.store');
 
+//Reservation
+Route::get('/reservaciones', 'ReservationController@index')->name('reservation');
+Route::get('/reservaciones/create','ReservationController@create')->name('reservation.create');
+Route::post('/reservaciones/create','ReservationController@store')->name('reservation.store');
+
+
+
 
 
 
@@ -83,12 +89,9 @@ Route::get('hola', function(){
 });
 
 
-//Route::post('/', );
-//Route::get('/', funtion(){
-  //  return view('layout');
-//});
 Route::resource('/galeria','InformationController');
 Route::resource('/crear','InformationController@create');
+
 // Rutas CRUD
  
 /* Crear */
@@ -115,5 +118,4 @@ Route::get('admin/information/details/{id}', ['as' => 'admin/information/details
 
 route::view('/app', 'layouts.app');
 
-//Route::resource ('/voluntariado', 'Voluntary.index');
 

@@ -18,7 +18,7 @@ class ReservationController extends Controller
     {
         $reservationC = Reservation::all();
         //dd($voluntaryC);
-        return view('reservation')->with('reservationN', $reservation);
+        return view('reservation')->with('reservationN', $reservationC);
     }
 
     /**
@@ -36,17 +36,19 @@ class ReservationController extends Controller
    
     public function store(ReservationRequest $request)
     {
-        $ReservationN= new donation;
+        $ReservationN= new reservation;
         //$ReservationN->Id= $request->id;
+        $ReservationN->identification= $request->identification;
+        $ReservationN->name= $request->name;
+        $ReservationN->lastname= $request->lastname;
         $ReservationN->reservationDate= $request->reservationDate;
         $ReservationN->reservationHour= $request->reservationHour;
         $ReservationN->adultQuantity= $request->adultQuantity;
         $ReservationN->childrenQuantity= $request->childrenQuantity;
         $ReservationN->tourType= $request->tourType;
         $ReservationN->tourPrice= $request->tourPrice;
-        $ReservationN->user_id= $request->user_id;
-
-
+        $ReservationN->email= $request->email;
+        $ReservationN->phone= $request->phone;
 
         $ReservationN->save();
         return redirect()->route('welcome');
@@ -59,10 +61,10 @@ class ReservationController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function show(Donation $id)
+    public function show(Reservation $id)
     {
-        $DonationB = Donation::find($id); 
-        return view('Donation.show',compact('DonationB'));
+        $DonationB = Reservation::find($id); 
+        return view('Reservation.show',compact('ReservationB'));
     }
 
     /**
@@ -71,11 +73,11 @@ class ReservationController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function edit(Donation $id)
+    public function edit(Reservation $id)
     {
 
-    $DonationE = Donation::find($id);
-    return view('Donation.edit', compact('DonationE'));
+    $ReservationE = Reservation::find($id);
+    return view('Reservation.edit', compact('ReservationE'));
 
     }
 
@@ -86,23 +88,25 @@ class ReservationController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Donation $id)
+    public function update(Request $request, Reservation $id)
     {
-        $DonationU = DonationU::find($id);
-        $DonationU->id = $request->id;
+        $ReservationU = Reservation::find($id);
+        $ReservationN->identification= $request->identification;
+        $ReservationN->name= $request->name;
+        $ReservationN->lastname= $request->lastname;
+        $ReservationU->reservationDate= $request->reservationDate;
+        $ReservationU->reservationHour= $request->reservationHour;
+        $ReservationU->adultQuantity= $request->adultQuantity;
+        $ReservationU->childrenQuantity= $request->childrenQuantity;
+        $ReservationU->tourType= $request->tourType;
+        $ReservationU->tourPrice= $request->tourPrice;
+        $ReservationN->email= $request->email;
+        $ReservationN->phone= $request->phone;
+        $ReservationU->save();
 
-        $DonationU->donorName = $request->donorName;
-        $DonationU->donationType = $request->donationType;
-
-        $DonationU->incomes_id = $request->incomes_id;
-        $DonationU->save();
-
-        return redirect()->route('Donations.donation');
+        return redirect()->route('Reservation.reservation');
     }
 
-
-
-     
 
     /**
      * Remove the specified resource from storage.
@@ -110,8 +114,8 @@ class ReservationController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Donation $id)
+    public function destroy(Reservation $id)
     {
-        $DonationE = Donation::find($id); $DonationE->delete();
+        $ReservationE = Reservation::find($id); $ReservationE->delete();
     }
 }

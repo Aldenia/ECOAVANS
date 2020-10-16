@@ -54,7 +54,7 @@ class DonationController extends Controller
         $DonationN->mail= $request->mail;
 
         $DonationN->save();
-        return redirect()->route('welcome');
+        return redirect()->route('realizarDonaciones')->with('success', 'Se ha registrado una nueva donación, gracias');
     }
 
 
