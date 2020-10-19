@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Donation;
 use Illuminate\Http\Request;
-
 use App\Http\Requests\DonationRequest;
+use Exception;
 
 class DonationController extends Controller
 {
@@ -44,12 +44,6 @@ class DonationController extends Controller
     {
         $DonationN= new donation;
         //$VoluntaryN->Id= $request->id;
-<<<<<<< HEAD
-        $DonationN->donorName= $request->donorName;
-        $DonationN->donationType= $request->donationType;
-        $DonationN->incomes_id= $request->incomes_id;
-      
-=======
         $DonationN->name= $request->name;
         $DonationN->lastName= $request->lastName;
         $DonationN->donationType= $request->donationType;
@@ -58,10 +52,9 @@ class DonationController extends Controller
         $DonationN->currentDate= $request->currentDate;
         $DonationN->phone= $request->phone;
         $DonationN->mail= $request->mail;
->>>>>>> 71309166b971bf0f15da377bc74de4db61a8848c
 
         $DonationN->save();
-        return redirect()->route('welcome');
+        return redirect()->route('realizarDonaciones');
     }
 
 
@@ -74,11 +67,8 @@ class DonationController extends Controller
     public function show(Donation $id)
     {
         $DonationB = Donation::find($id); 
-        return view('Donation.show',compact('DonationB'));
-<<<<<<< HEAD
-=======
+        return view('Donations.show',compact('DonationB'));
         //Donation
->>>>>>> 71309166b971bf0f15da377bc74de4db61a8848c
     }
 
     /**
@@ -91,7 +81,7 @@ class DonationController extends Controller
     {
 
     $DonationE = Donation::find($id);
-    return view('Donation.edit', compact('DonationE'));
+    return view('Donations.edit', compact('DonationE'));
 
     }
 
@@ -104,15 +94,6 @@ class DonationController extends Controller
      */
     public function update(Request $request, Donation $id)
     {
-<<<<<<< HEAD
-        $DonationU = DonationU::find($id);
-        $DonationU->id = $request->id;
-
-        $DonationU->donorName = $request->donorName;
-        $DonationU->donationType = $request->donationType;
-
-        $DonationU->incomes_id = $request->incomes_id;
-=======
         $DonationU = Donation::find($id);
         $DonationU->id= $request->id;
         $DonationU->name= $request->name;
@@ -124,19 +105,11 @@ class DonationController extends Controller
         $DonationU->phone= $request->phone;
         $DonationU->mail= $request->mail;
 
->>>>>>> 71309166b971bf0f15da377bc74de4db61a8848c
         $DonationU->save();
 
         return redirect()->route('Donations.donation');
     }
 
-<<<<<<< HEAD
-
-
-     
-
-=======
->>>>>>> 71309166b971bf0f15da377bc74de4db61a8848c
     /**
      * Remove the specified resource from storage.
      *

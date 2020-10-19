@@ -61,12 +61,28 @@ Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
 Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
 Route::post('/voluntario/create','VoluntaryController@store')->name('voluntary.store');
 Route::get('/amigoReq', 'PrincipalController@amigoReq')->name('amigoReq');
+Route::get('/voluntario/edit', 'VoluntaryController@edit')->name('voluntary.edit');
+Route::post('/voluntario/edit','VoluntaryController@show')->name('voluntary.show');
+Route::post('/voluntario/update','VoluntaryController@update')->name('voluntary.update');
+Route::get('/voluntario/destroy', 'VoluntaryController@destroy')->name('voluntary.destroy');
+
+
 
 //Donaciones
 
 Route::get('/donaciones', 'DonationController@index')->name('donation');
 Route::get('/donaciones/create','DonationController@create')->name('donation.create');
 Route::post('/donaciones/create','DonationController@store')->name('donation.store');
+Route::get('/realizarDonaciones', 'PrincipalController@realizarDonaciones')->name('realizarDonaciones');
+Route::post('/donaciones/edit','DonationController@show')->name('donation.show');
+Route::post('/donaciones/update','DonationController@update')->name('donation.update');
+Route::get('/donaciones/destroy', 'DonationController@destroy')->name('donation.destroy');
+
+
+//Reservaciones
+Route::get('/reservaciones', 'ReservationController@index')->name('reservation');
+Route::get('/reservaciones/create','ReservationController@create')->name('reservation.create');
+Route::post('/reservaciones/create','ReservationController@store')->name('reservation.store');
 
 
 //Income

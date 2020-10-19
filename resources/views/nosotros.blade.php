@@ -24,11 +24,36 @@
                     <div class="container" data-aos="fade-up">
 
                       <div class="section-title">
-                        <h2>Sobre Nosotros</h2>
-                        <h3>Descubre más <span>sobre nosotros</span></h3>
+                       <!-- <h2>Sobre Nosotros</h2>-->
+                        <h3>Descubre más sobre nosotros</h3>
                         <!--<p>DISPONIBLE PARA AGREGAR INFORMACION1</p>-->
                       </div>
-
+                      <div>
+                                <h5>¿Quiénes somos?</h5>
+                                <p>
+                                El Ecomuseo de las Minas de Abangares se fundó en 1991, y se encuentra localizado
+                                precisamente donde existió la planta de procesamiento de oro, rescatando así edificaciones y
+                                maquinaria que se utilizó en la época de la “fiebre del oro”. Además, posee gran diversidad
+                                que albergan 38 hectáreas del Ecomuseo, a su vez impresionantes atractivos históricos que
+                                se encuentran en él; como evidencia del desarrollo que hubo durante el periodo de
+                                industrialización de la actividad minera de Abangares. Aunque en años anteriores, el
+                                Ecomuseo había caído en el abandono; la situación se revirtió gracias a la colaboración de
+                                las Municipalidad de Abangares, junto con el trabajo y esfuerzo de La Junta Administradora
+                                del Ecomuseo y de las Universidades Públicas de la Región.
+                                </p>
+                            </div>
+                            <br>
+                            <div>
+                                <h5>Objetivo Principal:</h5>
+                                <p>
+                                El Ecomuseo de las Minas de Abangares tiene como objetivo principal rescatar,
+                                fortalecer y recuperar el patrimonio histórico de la minería en Costa Rica, resguardando los
+                                artefactos que se utilizaron en esa época e integrándolo al desarrollo turístico de la zona.
+                                Además, la Ley 8596 ampara la creación del Ecomuseo de las Minas de Abangares, la cual
+                                decreta la creación y su autorización para una efectiva administración.
+                                </p>
+                            </div>
+                            <br>
                       <div class="row">
                         <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
                           <img src="img/EcoAbangares.jpeg" class="img-fluid" alt="">
@@ -40,7 +65,8 @@
                           </p>-->
                           <ul>
                             <li>
-                              <i class="bx bx-store-alt"></i>
+                              <!--<i class="bx bx-store-alt"></i>-->
+                              
                             <div>
                                 <h5>Misión</h5>
                                 <p>
@@ -48,7 +74,8 @@
                               de Costa Rica donde se fortalece la economía e identidad del cantón de Abangares.
                                 </p>
                             </div>
-                            <i class="bx bx-images"></i>
+<br>
+                            <!--<i class="bx bx-images"></i>-->
                               <div>
                                 <h5>Visión</h5>
                                 <p>Ser el motor socioeconómico y cultural del cantón de Abangares, una organización
@@ -74,6 +101,24 @@
                             <p>Honestidad: Es una cualidad de los seres humanos, es aquella que procura siempre anteponer
                                 la verdad en sus pensamientos, expresiones y acciones.</p>
                         </div>
+                        <div>
+                      <br>
+                        <h5>Ubicación</h5>
+                            <p>
+                            Localizado al sureste de la provincia de Guanacaste, el cantón de Abangares limita al
+                            norte con Tilarán; al sur con el cantón central de Puntarenas y el golfo de Nicoya; al
+                            este con el cantón de Miramar y la parte central de la provincia de Puntarenas,
+                            mediado por el río Lagarto; al oeste, con la localidad de Cañas, bordeado por el río
+                            Lajas.
+                            </p>
+                        </div>
+                      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                          <p></p>
+                          <img src="img/avistamiento.jpg" class="rounded float-righ img-fluid" alt="...">
+
+                        </div>
+                      </div>
+
                         <hr>
 
                     </div>

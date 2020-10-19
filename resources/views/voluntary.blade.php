@@ -13,7 +13,7 @@
 <?php $page='voluntary';?>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-20">
             <div class="card">
                 <div class="card-header">Voluntariado</div>
 
@@ -22,6 +22,7 @@
                         <thead>
                             <tr>
                                 <th width="20px">ID</th>
+                                
                                 <th >Nombre</th>
                                 <th >Apellido</th>
                                 <th >Edad</th>
@@ -45,11 +46,28 @@
                                 <td>{{ $voluntary->Email }}</td>
                                 <td>{{ $voluntary->Cantidad }}</td>
                                 <td>{{ $voluntary->Descripcion }}</td>
+                                
+                               
+                             
+                                <td> 
+                              
+                                    <a href="{​​{​​ route('voluntary.show', $Voluntary->id) }​​}​​" class="btn btn-success">Ver</a>
+                                 
+                                </td>
+                                <td> 
+                                <a href="{​​{​​ route('voluntary.edit', $Voluntary->id) }​​}​​"class="btn btn-warning">Editar</a>
+                                </td>
+                                <td> 
+                                    <form action="{​​{​​route('voluntary.destroy', $Voluntary->id)}​​}​​" method='POST'>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </td> 
                             </tr>
+
+
                         @endforeach
-
-                    </table>
-
+                        </table>
                 </div>
                 
             </div>

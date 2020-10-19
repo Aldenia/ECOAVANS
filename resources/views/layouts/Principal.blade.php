@@ -27,12 +27,6 @@
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: BizLand - v1.1.0
-  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="cuerpo">
@@ -70,50 +64,18 @@
             <li><a href="#portfolio">Galeria</a></li>
             
 
-
-            <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
-
-
-
             <li class="drop-down"><a href="">Formularios</a>
             <ul>
-
-              <li><a href="{{ route('voluntary.create')}}">Voluntariado</a></li>
-              <li><a href="{{ route('donation.create')}}">Donaciones</a></li>
+            <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
+            <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}">Donaciones</a></li>
             </ul>
           </li>
-         <!-- <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>-->
 
+           
           <li><a href="#contact">Contactos</a></li>
 
-
           <li>
-         <!--  @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                    @endauth
-                </div>
-            @endif-->
+  
 
             @if (Auth::guest())
           <li  class="dropdown <?php if($page =='login' || $page  =='register' || $page  =='edit' || $page =='home' ){echo 'active';} ?>">
@@ -136,18 +98,6 @@
               <ul>   
               <li class="black">    
 
-
-
-              <!--<a href="{{route('Admin.inicio')}}" class="dropdown-item">
-                 <i class="fas fa-th-large"></i>    Administración</li></a>
-                </li>
-                <div class="dropdown-divider"></div>
-
-                <li class=" black < ?php if($page  =='edit'){echo 'active';} ?>">
-
-                  <a href="{{ route ('auth.edit' , Auth::user()->id )}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>   Gestionar cuenta</li></a>
-                <form action="" method="POST" class="d-inline">-->
                 @method('PUT')
                 @csrf
                 </form>
@@ -160,14 +110,24 @@
                 <div class="dropdown-divider"></div>
                   <li class="black">
                     <a href="{{ route ('voluntary')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Mostrar voluntarios</li></a>
+                   <i class="fas fa-cog"></i>Gestión de voluntarios</li></a>
                 <form action="" method="POST" class="d-inline">
 
+                <div class="dropdown-divider"></div>
+                  <li class="black">
+                    <a href="{{ route ('donation')}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i>Gestión de donaciones</li></a>
+                <form action="" method="POST" class="d-inline">
 
                 <div class="dropdown-divider"></div>
                 <li class="black">
                   <a href="{{ route ('actividad')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i> Mostrar actividades</li></a>
+                   <i class="fas fa-cog"></i> Gestión actividades</li></a>
+                <form action="" method="POST" class="d-inline">
+                <div class="dropdown-divider"></div>
+                <li class="black">
+                  <a href="{{ route ('reservation')}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i> Gestión reservaciones</li></a>
                 <form action="" method="POST" class="d-inline">
                 @method('PUT')
                 @csrf
@@ -218,7 +178,7 @@
 
         <div class="section-title">
           <h2>Galeria</h2>
-          <h3>Consulte nuestra <span>galeria</span></h3>
+          <h3>Consulte nuestra galeria</h3>
           <p> Atractivos del Ecomuseo mina de oro de Abangares </p>
         </div>
 

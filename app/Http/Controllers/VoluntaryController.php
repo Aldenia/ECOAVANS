@@ -6,6 +6,8 @@ use App\Voluntary;
 use Illuminate\Http\Request;
 use App\Http\Requests\VoluntaryRequest;
 
+use Exception;
+
 class VoluntaryController extends Controller
 {
     /**
@@ -54,7 +56,7 @@ class VoluntaryController extends Controller
         $VoluntaryN->Descripcion= $request->Descripcion;
 
         $VoluntaryN->save();
-        return redirect()->route('welcome');
+        return redirect()->route('amigoReq');
     }
 
     /**
@@ -66,7 +68,7 @@ class VoluntaryController extends Controller
     public function show(Voluntary $id)
     {
         $VoluntaryB = Voluntary::find($id); 
-        return view('Voluntary.show',compact('VoluntaryB'));
+        return view('Volun.show',compact('VoluntaryB'));
     }
 
     /**
@@ -77,9 +79,10 @@ class VoluntaryController extends Controller
      */
     public function edit(Voluntary $id)
     {
-
+     
+       
     $VoluntaryE = Voluntary::find($id);
-    return view('Voluntary.edit', compact('VoluntaryE'));
+    return view('Volun.edit', compact('VoluntaryE'));
 
     }
 
@@ -114,6 +117,12 @@ class VoluntaryController extends Controller
      */
     public function destroy(Voluntary $id)
     {
-        $VoluntaryE = Voluntary::find($id); $VoluntaryE->delete();
+        //try{
+        $VoluntaryE = Voluntary::find($id);
+        $VoluntaryE->delete();
+        return redirect()->route('Voluntary.index');
+        //} //catch ('Exception $e'){
+           // return "fatal error".$e->getMessage();
+       // }
     }
 }

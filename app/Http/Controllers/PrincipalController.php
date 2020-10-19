@@ -51,4 +51,13 @@ class PrincipalController extends Controller
     {
         return view('amigoReq');
     }
+    public function realizarDonaciones()
+    {
+        return view('realizarDonaciones');
+    }
+    public function donation()
+    {
+        return view('donation');
+    }
+
 }

@@ -21,7 +21,7 @@
 
                   <div class="section-title">
                     <h2>Actividades</h2><br>
-                    <h4>Consulte nuestras <span>actividades</span></h3>
+                  <!--  <h4>Consulte nuestras <span>actividades</span></h3>-->
                     <h5>Te invitamos a conocernos por medio de las actividades que se realizan en el Ecomuseo de las minas de Abangares.</h4><br>
                   </div>
                 </div>  
@@ -100,7 +100,8 @@
 
                     <br>
                     {{-- <div class="btn-group"> --}}
-                            <td> <a <?php if($page =='welcome'){echo 'active';} ?>"> <a href="{{route('welcome')}}" class="btn btn-primary" >Reserve aquí</a></td>
+                            <td> <a <?php if($page =='reservation.create'){echo 'active';} ?>">
+                             <a href="{{route('reservation.create')}}" class="btn btn-primary" >Reserve aquí</a></td>
                     {{-- </div> --}}
               <br>
               <br>

@@ -13,7 +13,7 @@
 <?php $page='donation';?>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-20">
             <div class="card">
                 <div class="card-header">Donaciones</div>
 
@@ -46,6 +46,21 @@
                 <td>{{$donation->currentDate}}</td>
                 <td>{{$donation->phone}}</td>
                 <td>{{$donation->mail}}</td>
+
+                <td> 
+                              
+                   <a href="{​​{​​ route('donation.show', $Donation->id) }​​}​​" class="btn btn-success">Ver</a>
+                                 
+                </td>
+                <td> 
+                   <a href="{​​{​​ route('donation.edit', $Donation->id) }​​}​​"class="btn btn-warning">Editar</a>
+                </td>
+                <td> 
+                    <form action="{​​{​​route('donation.destroy', $Donation->id)}​​}​​" method='POST'>
+                      <input type="hidden" name="_method" value="DELETE">
+                      <button class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td> 
 
                 </tr>
                 @endforeach

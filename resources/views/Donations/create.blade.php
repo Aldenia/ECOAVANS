@@ -19,6 +19,7 @@
         <div class="col-md-12">
             <div class="card">
             <div class="container" data-aos="fade-up">
+            <h2 style="color: rgba(3, 255, 16, 0.664)" align="center">Realizar Donaciones </h2>
 
               <div class="row mt-5">
                 <div class="col-sm-8 offset-sm-2">
