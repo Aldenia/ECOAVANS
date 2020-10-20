@@ -6,8 +6,7 @@ use App\Income;
 use Illuminate\Http\Request;
 use App\Http\Requests\IncomeRequest;
 
-use App\Http\Requests\IncomeRequest;
-use Illuminate\Http\Request;
+
 
 class IncomeController extends Controller
 {
@@ -57,15 +56,6 @@ class IncomeController extends Controller
         $IncomeN->save;
         return redirect()->route('welcome');
 
-        $income= new Income();
-        $income->id= $request->id;
-        $income->description= $request->description;
-        $income->quantity= $request->quantity;
-        $income->incomeData= $request->incomeData;
-
-        $income->save;
-        return redirect()->route('donation.index');
-
     }
 
     /**
@@ -80,9 +70,7 @@ class IncomeController extends Controller
         $IncomeB = Income::find($id); 
         return view('Income.show',compact('IncomeB'));
 
-        $income = Income::find($id); 
-        return view('income.show',compact('income'));
-
+       
     }
 
     /**
@@ -97,10 +85,6 @@ class IncomeController extends Controller
 
     $IncomeE = Income::find($id);
     return view('Income.edit', compact('IncomeE'));
-
-    $income = Income::find($id);
-    return view('income.edit', compact('income'));
-
 
     }
 
@@ -122,16 +106,7 @@ class IncomeController extends Controller
 
         $IncomeU->save;
         return redirect()->route('Income.index');
-
-        $income= new Income();
-        $income->id= $request->id;
-        $income->description= $request->description;
-        $income->quantity= $request->quantity;
-        $income->incomeData= $request->incomeData;
-
-        $income->save;
-        return redirect()->route('donation.index');
-
+       
     }
 
     /**

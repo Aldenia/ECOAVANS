@@ -73,6 +73,13 @@ Route::get('/ingresos', 'IncomeController@index')->name('income');
 Route::get('/ingresos/create','IncomeController@create')->name('income.create');
 Route::post('/ingresos/create','IncomeController@store')->name('income.store');
 
+//Reservation
+Route::get('/reservaciones', 'ReservationController@index')->name('reservation');
+Route::get('/reservaciones/create','ReservationController@create')->name('reservation.create');
+Route::post('/reservaciones/create','ReservationController@store')->name('reservation.store');
+
+
+
 
 
 
