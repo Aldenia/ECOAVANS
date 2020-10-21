@@ -75,7 +75,7 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label for="phone">Telefono de contacto:</label>
+                          <label for="phone">Telefono de contacto(Opcional)):</label>
                           <br/>
                           <input type="tel" name = "phone" id = "phone" class="form-control" required>
                         </div>
